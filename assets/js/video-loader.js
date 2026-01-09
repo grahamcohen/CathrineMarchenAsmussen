@@ -291,7 +291,17 @@
                 line.includes('MY FAITH') ||
                 line.includes('anthology series') ||
                 line.includes('ten independent films') ||
-                line.includes('all ages')
+                line.includes('all ages') ||
+                line.includes('is a Buddhist') ||
+                line.includes('is a Jehovah Witness') ||
+                line.includes('is a Pentecostal Christian') ||
+                line.includes('is a Witch') ||
+                line.includes('is a Hindu') ||
+                line.includes('is a Sikh') ||
+                line.includes('is a Danish Protestant Church Christian') ||
+                line.includes('has faith in Science') ||
+                line.includes('is a Jew') ||
+                line.includes('is a Sufi Muslim')
             );
 
             if (seriesLines.length > 0) {
@@ -319,18 +329,35 @@
             if (trimmed.includes('MY FAITH') ||
                 trimmed.includes('anthology series') ||
                 trimmed.includes('ten independent films') ||
-                trimmed.includes('all ages')) {
+                trimmed.includes('all ages') ||
+                trimmed.includes('is a Buddhist') ||
+                trimmed.includes('is a Jehovah Witness') ||
+                trimmed.includes('is a Pentecostal Christian') ||
+                trimmed.includes('is a Witch') ||
+                trimmed.includes('is a Hindu') ||
+                trimmed.includes('is a Sikh') ||
+                trimmed.includes('is a Danish Protestant Church Christian') ||
+                trimmed.includes('has faith in Science') ||
+                trimmed.includes('is a Jew') ||
+                trimmed.includes('is a Sufi Muslim')) {
                 return false;
             }
             return true;
         }) : [];
         const descriptionHTML = descriptionLines.map(line => `<p>${convertMarkdown(line)}</p>`).join('');
 
-        detailContainer.innerHTML = `
-            <div class="film-header">
-                <h2 class="film-detail-title">${video.title}</h2>
-            </div>
+        // Build title HTML with optional subtitle
+        let titleHTML = `<h2 class="film-detail-title">${video.title}</h2>`;
+        if (video.subtitle) {
+            titleHTML = `
+                <h2 class="film-detail-title">
+                    ${video.title}
+                    <span class="film-subtitle">${video.subtitle}</span>
+                </h2>
+            `;
+        }
 
+        detailContainer.innerHTML = `
             <div class="film-player">
                 <div class="video-wrapper video-wrapper-large">
                     <iframe src="https://player.vimeo.com/video/${video.vimeo_id}"
@@ -339,6 +366,10 @@
                             allowfullscreen>
                     </iframe>
                 </div>
+            </div>
+
+            <div class="film-header">
+                ${titleHTML}
             </div>
 
             <div class="film-info-section">
