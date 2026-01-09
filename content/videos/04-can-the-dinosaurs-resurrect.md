@@ -12,7 +12,7 @@ description: |
   Elliot is fascinated by the fact that all life consists of stardust
   He pursues the dream of recreating dinosaurs with his friend Liam
 
-  The film is part of the anthology series MY FAITH, in which children of different faiths face recognizable challenges,
+  The film is part of the anthology series MY FAITH, in which children of different faiths face recognizable challenges
 
   The series consists of ten independent films for all ages (7+)
 filmstriben:
