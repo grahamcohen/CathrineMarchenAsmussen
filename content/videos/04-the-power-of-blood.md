@@ -6,7 +6,7 @@ vimeo_url: "https://vimeo.com/1147404312"
 thumbnail: "assets/images/ThePowerOfBlood.png"
 faith_icon: "assets/images/Pentagram.png"
 faith: "Witch"
-order: 10
+order: 4
 description: |
   **Short film about honoring**
 

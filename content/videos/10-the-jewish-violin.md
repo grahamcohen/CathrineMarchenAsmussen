@@ -6,7 +6,7 @@ vimeo_url: "https://vimeo.com/1147405876"
 thumbnail: "assets/images/TheJewishViolin.png"
 faith_icon: "assets/images/JewishStar.png"
 faith: "Jew"
-order: 6
+order: 10
 description: |
   **Short film about loss**
 

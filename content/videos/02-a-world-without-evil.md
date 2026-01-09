@@ -7,7 +7,7 @@ thumbnail: "assets/images/AWorldWithoutEvil.png"
 faith_icon: "assets/images/Dove.png"
 awards: "Nominated IDFA"
 faith: "Jehovah's Witnesses"
-order: 8
+order: 2
 description: |
   **Short film about death**
 

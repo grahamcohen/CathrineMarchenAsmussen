@@ -6,7 +6,7 @@ vimeo_url: "https://vimeo.com/1147409112"
 thumbnail: "assets/images/TheWorldIsOneUnitedSoul.png"
 faith_icon: "assets/images/Hindu.png"
 faith: "Hindu"
-order: 3
+order: 5
 description: |
   **Short film about the path to peace**
 

@@ -6,7 +6,7 @@ vimeo_url: "https://vimeo.com/1147400853"
 thumbnail: "assets/images/AskForAMiracle.png"
 faith_icon: "assets/images/Ichthys.png"
 faith: "The Pentecostal Church"
-order: 9
+order: 3
 description: |
   **Short film about setting the bar high**
 

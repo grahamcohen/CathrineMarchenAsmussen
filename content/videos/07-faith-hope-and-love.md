@@ -6,7 +6,7 @@ vimeo_url: "https://vimeo.com/1147411908"
 thumbnail: "assets/images/FaithHopeAndLove.png"
 faith_icon: "assets/images/DanishProtestantChurch.png"
 faith: "Danish protestant church"
-order: 2
+order: 7
 description: |
   **Short film about longing**
 

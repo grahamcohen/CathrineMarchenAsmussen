@@ -6,7 +6,7 @@ vimeo_url: "https://vimeo.com/1147407808"
 thumbnail: "assets/images/ASikhIsNotAfraid.png"
 faith_icon: "assets/images/Sikh.png"
 faith: "Sikh"
-order: 5
+order: 6
 description: |
   **Short film about taming fear**
 

@@ -6,7 +6,7 @@ vimeo_url: "https://vimeo.com/1147410246"
 thumbnail: "assets/images/CanTheDinosaursResurrect.png"
 faith_icon: "assets/images/Science.png"
 faith: "Science"
-order: 4
+order: 8
 description: |
   **Short film exploring life's emergence**
 

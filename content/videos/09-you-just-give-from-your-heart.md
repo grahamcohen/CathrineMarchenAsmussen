@@ -6,7 +6,7 @@ vimeo_url: "https://vimeo.com/1147617209"
 thumbnail: "assets/images/YouJustGiveFromYourHeart.png"
 faith: "Buddhist"
 faith_icon: "assets/images/Buddhist.png"
-order: 1
+order: 9
 description: |
   **Short film about giving and receiving**
 
