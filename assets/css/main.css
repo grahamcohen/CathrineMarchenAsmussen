@@ -5,13 +5,15 @@
 :root {
     --color-text: #1a1a1a;
     --color-text-light: #666;
+    --color-text-brown: #6B4423;
     --color-bg: #ffffff;
-    --color-bg-light: #f8f8f8;
+    --color-bg-light: #FAF8F5;
+    --color-bg-warm: #F5F1ED;
     --color-border: #e5e5e5;
     --color-accent: #1a1a1a;
 
-    --font-serif: 'Baskerville', 'Libre Baskerville', 'Georgia', serif;
-    --font-sans: 'Noto Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-serif: 'Optima', 'Gill Sans', 'Trebuchet MS', 'Avenir', sans-serif;
+    --font-sans: 'Gill Sans', 'Avenir', 'Optima', 'Trebuchet MS', -apple-system, sans-serif;
 
     --spacing-xs: 0.5rem;
     --spacing-sm: 1rem;
@@ -56,7 +58,7 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.75);
+    background-color: rgba(250, 248, 245, 0.85);
     z-index: -1;
     pointer-events: none;
 }
@@ -136,10 +138,11 @@ img {
     font-weight: 400;
     letter-spacing: 0.03em;
     margin: 0;
+    text-transform: uppercase;
 }
 
 .site-title a {
-    color: var(--color-text);
+    color: var(--color-text-brown);
 }
 
 .main-nav {
@@ -601,7 +604,10 @@ img {
 .site-footer p {
     margin-bottom: var(--spacing-xs);
     font-size: 0.875rem;
-    color: var(--color-text-light);
+    font-family: var(--font-serif);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--color-text-brown);
 }
 
 .footer-contact {
@@ -613,11 +619,11 @@ img {
 }
 
 .footer-contact a {
-    color: var(--color-text-light);
+    color: var(--color-text-brown);
 }
 
 .separator {
-    color: var(--color-text-light);
+    color: var(--color-text-brown);
 }
 
 /* ==========================================================================
@@ -859,7 +865,7 @@ img {
     margin-top: var(--spacing-lg);
     margin-bottom: var(--spacing-md);
     padding: var(--spacing-md);
-    background-color: rgba(0, 0, 0, 0.02);
+    background-color: var(--color-bg-warm);
     border-left: 2px solid var(--color-border);
     font-size: 0.875rem;
     color: var(--color-text-light);
