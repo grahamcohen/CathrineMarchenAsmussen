@@ -6,7 +6,7 @@ vimeo_url: "https://vimeo.com/1147394521"
 thumbnail: "assets/images/WhoAmI.png"
 faith_icon: "assets/images/SufiMuslim.png"
 faith: "Sufi Muslim"
-order: 7
+order: 0
 description: |
   **Short film about existence**
   Asmir delves into Socratic questions, when not busy acting a bully

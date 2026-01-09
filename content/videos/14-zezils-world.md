@@ -1,5 +1,5 @@
 ---
-title: "ZeZils World"
+title: "ZEZIL'S WORLD"
 year: 2005
 duration: "33 min"
 vimeo_url: "https://vimeo.com/1147383853"
