@@ -10,7 +10,7 @@ awards: "Nominated Best Short Dok, GoldenDok"
 description: |
   In the wake of the Mohammed crisis, the union Democratic Muslims is formed by Amina's hero, the politician Naser Khader.
 
-  Amina joins in
+  Amina joins in.
 
   Her neighbors know Naser as a traitor.
 filmstriben:

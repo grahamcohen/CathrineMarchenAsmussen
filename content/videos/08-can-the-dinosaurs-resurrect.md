@@ -14,7 +14,7 @@ description: |
 
   He pursues the dream of recreating dinosaurs with his friend Liam
 
-  The film is part of the anthology series MY FAITH, in which children of different faiths face recognizable challenges. The series consists of ten independent films for all ages (7+). Elliot has faith in Science
+  The film is part of the anthology series MY FAITH, in which children of different faiths face recognizable challenges. The series consists of ten independent films for all ages (7+). Elliot has faith in Science.
 filmstriben:
   - "https://biblioteket.filmstriben.dk/film/9372630289/min-tro---kan-dinosaurerne-genopsta"
   - "https://fjernleje.filmstriben.dk/film/9000006697/min-tro-2-afsnit-verden-er-en-stor-sjael-kan-dinosaurerne-genopsta"

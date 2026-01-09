@@ -7,7 +7,8 @@ thumbnail: "assets/images/AMothersTale.png"
 order: 15
 description: |
   The gap between a Turkish village and Denmark
-  - A story about the cost of putting children first
+
+  A story about the cost of putting children first
 filmstriben:
   - "https://biblioteket.filmstriben.dk/film/9000000453/en-mors-historie"
 ---
