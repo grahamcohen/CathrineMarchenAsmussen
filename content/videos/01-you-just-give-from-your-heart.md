@@ -7,7 +7,7 @@ thumbnail: assets/images/YouJustGiveFromYourHeart.png
 faith: Buddhist
 faith_icon: assets/images/Buddhist.png
 order: 1
-description: >
+description: |
   **Short film about giving and receiving**
 
   Htet Linn wants a dog
