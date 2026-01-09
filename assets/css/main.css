@@ -595,6 +595,8 @@ img {
    ========================================================================== */
 
 .site-footer {
+    background-color: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
     border-top: 1px solid var(--color-border);
     padding: var(--spacing-xl) 0;
     text-align: center;
@@ -769,6 +771,13 @@ img {
     white-space: pre-line;
 }
 
+.film-card-subtitle {
+    font-size: 0.75rem;
+    font-weight: 400;
+    display: block;
+    margin-top: 0.25rem;
+}
+
 .film-card-link {
     display: block;
     position: relative;
@@ -817,7 +826,7 @@ img {
 
 .film-header {
     text-align: center;
-    margin-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
 }
 
 .film-detail-title {
@@ -836,7 +845,7 @@ img {
 
 .film-info-section {
     text-align: center;
-    margin-top: var(--spacing-md);
+    margin-top: 0;
     margin-bottom: var(--spacing-md);
     padding-bottom: var(--spacing-md);
     border-bottom: 1px solid var(--color-border);
@@ -895,7 +904,7 @@ img {
 }
 
 .film-player {
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
 }
 
 .film-description-full {

@@ -5,7 +5,9 @@ duration: "41 min"
 vimeo_url: "https://vimeo.com/1147379583"
 thumbnail: "assets/images/GhettoPrincess.png"
 order: 16
-awards: "Grand Prix at Odense Filmfestival 1999\nBest film for kids DKs TV-festival 2000"
+awards: |
+  Grand Prix at Odense Filmfestival 1999
+  Best film for kids DKs TV-festival 2000
 description: |
   **JURY'S STATEMENT**
 
