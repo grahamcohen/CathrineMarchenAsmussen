@@ -225,6 +225,16 @@
             const titleElement = document.createElement('h3');
             titleElement.className = 'film-card-title';
             titleElement.textContent = video.title;
+
+            // Add subtitle if present
+            if (video.subtitle) {
+                const subtitleElement = document.createElement('span');
+                subtitleElement.className = 'film-card-subtitle';
+                subtitleElement.textContent = video.subtitle;
+                titleElement.appendChild(document.createElement('br'));
+                titleElement.appendChild(subtitleElement);
+            }
+
             card.appendChild(titleElement);
 
             grid.appendChild(card);
@@ -279,13 +289,12 @@
             `;
         }
 
-        // Build faith icon HTML with caption
+        // Build faith icon HTML
         let faithHTML = '';
         if (video.faith_icon && video.faith) {
             faithHTML = `
                 <div class="film-faith-icon">
                     <img src="${video.faith_icon}" alt="${video.faith}" class="faith-icon-large">
-                    <p class="faith-caption">${video.faith}</p>
                 </div>
             `;
         }
