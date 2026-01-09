@@ -12,7 +12,7 @@ description: |
   Anvita wants to become Prime Minister to bring peace to the world
   She reaches out to the local monk in Vanløse for help
 
-  The film is part of the anthology series MY FAITH, in which children of different faiths face recognizable challenges,
+  The film is part of the anthology series MY FAITH, in which children of different faiths face recognizable challenges
 
   The series consists of ten independent films for all ages (7+)
 filmstriben:
