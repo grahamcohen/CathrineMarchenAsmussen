@@ -6,18 +6,30 @@
 (function() {
     'use strict';
 
+    // Detect base path for GitHub Pages
+    function getBasePath() {
+        const path = window.location.pathname;
+        // If we're on GitHub Pages (path starts with /repo-name/)
+        if (path.includes('/CathrineMarchenAsmussen/')) {
+            return '/CathrineMarchenAsmussen/';
+        }
+        return '/';
+    }
+
+    const BASE_PATH = getBasePath();
+
     // List of all video files
     const VIDEO_FILES = [
-        '01-you-just-give-from-your-heart.md',
-        '02-faith-hope-and-love.md',
-        '03-the-world-is-one-united-soul.md',
-        '04-can-the-dinosaurs-resurrect.md',
-        '05-a-sikh-is-not-afraid.md',
-        '06-the-jewish-violin.md',
-        '07-who-am-i.md',
-        '08-a-world-without-evil.md',
-        '09-ask-for-a-miracle.md',
-        '10-the-power-of-blood.md',
+        '01-who-am-i.md',
+        '02-a-world-without-evil.md',
+        '03-ask-for-a-miracle.md',
+        '04-the-power-of-blood.md',
+        '05-the-world-is-one-united-soul.md',
+        '06-a-sikh-is-not-afraid.md',
+        '07-faith-hope-and-love.md',
+        '08-can-the-dinosaurs-resurrect.md',
+        '09-you-just-give-from-your-heart.md',
+        '10-the-jewish-violin.md',
         '11-the-boys-camp.md',
         '12-hunting-the-only-one.md',
         '13-naser-and-me.md',
@@ -128,7 +140,9 @@
     async function loadVideo(filename) {
         try {
             console.log('Loading:', filename);
-            const response = await fetch(`content/videos/${filename}`);
+            const videoPath = `${BASE_PATH}content/videos/${filename}`.replace(/\/\//g, '/');
+            console.log('Fetching from:', videoPath);
+            const response = await fetch(videoPath);
 
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
@@ -291,7 +305,17 @@
                 line.includes('MY FAITH') ||
                 line.includes('anthology series') ||
                 line.includes('ten independent films') ||
-                line.includes('all ages')
+                line.includes('all ages') ||
+                line.includes('is a Buddhist') ||
+                line.includes('is a Jehovah Witness') ||
+                line.includes('is a Pentecostal Christian') ||
+                line.includes('is a Witch') ||
+                line.includes('is a Hindu') ||
+                line.includes('is a Sikh') ||
+                line.includes('is a Danish Protestant Church Christian') ||
+                line.includes('has faith in Science') ||
+                line.includes('is a Jew') ||
+                line.includes('is a Sufi Muslim')
             );
 
             if (seriesLines.length > 0) {
@@ -319,18 +343,35 @@
             if (trimmed.includes('MY FAITH') ||
                 trimmed.includes('anthology series') ||
                 trimmed.includes('ten independent films') ||
-                trimmed.includes('all ages')) {
+                trimmed.includes('all ages') ||
+                trimmed.includes('is a Buddhist') ||
+                trimmed.includes('is a Jehovah Witness') ||
+                trimmed.includes('is a Pentecostal Christian') ||
+                trimmed.includes('is a Witch') ||
+                trimmed.includes('is a Hindu') ||
+                trimmed.includes('is a Sikh') ||
+                trimmed.includes('is a Danish Protestant Church Christian') ||
+                trimmed.includes('has faith in Science') ||
+                trimmed.includes('is a Jew') ||
+                trimmed.includes('is a Sufi Muslim')) {
                 return false;
             }
             return true;
         }) : [];
         const descriptionHTML = descriptionLines.map(line => `<p>${convertMarkdown(line)}</p>`).join('');
 
-        detailContainer.innerHTML = `
-            <div class="film-header">
-                <h2 class="film-detail-title">${video.title}</h2>
-            </div>
+        // Build title HTML with optional subtitle
+        let titleHTML = `<h2 class="film-detail-title">${video.title}</h2>`;
+        if (video.subtitle) {
+            titleHTML = `
+                <h2 class="film-detail-title">
+                    ${video.title}
+                    <span class="film-subtitle">${video.subtitle}</span>
+                </h2>
+            `;
+        }
 
+        detailContainer.innerHTML = `
             <div class="film-player">
                 <div class="video-wrapper video-wrapper-large">
                     <iframe src="https://player.vimeo.com/video/${video.vimeo_id}"
@@ -339,6 +380,10 @@
                             allowfullscreen>
                     </iframe>
                 </div>
+            </div>
+
+            <div class="film-header">
+                ${titleHTML}
             </div>
 
             <div class="film-info-section">

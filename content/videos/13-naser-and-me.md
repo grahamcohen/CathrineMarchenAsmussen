@@ -1,5 +1,6 @@
 ---
-title: "NASER & ME\nHOW HARD CAN IT BE?"
+title: "NASER & ME"
+subtitle: "HOW HARD CAN IT BE?"
 year: 2007
 duration: "48 min"
 vimeo_url: "https://vimeo.com/1147386501"
