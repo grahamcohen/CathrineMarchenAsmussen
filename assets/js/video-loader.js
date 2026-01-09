@@ -6,6 +6,18 @@
 (function() {
     'use strict';
 
+    // Detect base path for GitHub Pages
+    function getBasePath() {
+        const path = window.location.pathname;
+        // If we're on GitHub Pages (path starts with /repo-name/)
+        if (path.includes('/CathrineMarchenAsmussen/')) {
+            return '/CathrineMarchenAsmussen/';
+        }
+        return '/';
+    }
+
+    const BASE_PATH = getBasePath();
+
     // List of all video files
     const VIDEO_FILES = [
         '01-you-just-give-from-your-heart.md',
@@ -128,7 +140,9 @@
     async function loadVideo(filename) {
         try {
             console.log('Loading:', filename);
-            const response = await fetch(`content/videos/${filename}`);
+            const videoPath = `${BASE_PATH}content/videos/${filename}`.replace(/\/\//g, '/');
+            console.log('Fetching from:', videoPath);
+            const response = await fetch(videoPath);
 
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
