@@ -11,7 +11,7 @@ description: |
   **Short film about loss**
   Leah finds comfort playing the violin for the old folks at the Jewish nursing home, now her own grandparents have passed
 
-  The film is part of the anthology series MY FAITH, in which children of different faiths face recognizable challenges,
+  The film is part of the anthology series MY FAITH, in which children of different faiths face recognizable challenges
 
   The series consists of ten independent films for all ages (7+)
 filmstriben:
