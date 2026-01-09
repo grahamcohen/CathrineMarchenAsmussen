@@ -1,0 +1,405 @@
+/**
+ * Dynamic Video Loader for Cathrine Marchen Asmussen Website
+ * Loads video markdown files and renders them dynamically
+ */
+
+(function() {
+    'use strict';
+
+    // List of all video files
+    const VIDEO_FILES = [
+        '01-you-just-give-from-your-heart.md',
+        '02-faith-hope-and-love.md',
+        '03-the-world-is-one-united-soul.md',
+        '04-can-the-dinosaurs-resurrect.md',
+        '05-a-sikh-is-not-afraid.md',
+        '06-the-jewish-violin.md',
+        '07-who-am-i.md',
+        '08-a-world-without-evil.md',
+        '09-ask-for-a-miracle.md',
+        '10-the-power-of-blood.md',
+        '11-the-boys-camp.md',
+        '12-hunting-the-only-one.md',
+        '13-naser-and-me.md',
+        '14-zezils-world.md',
+        '15-a-mothers-tale.md',
+        '16-ghetto-princess.md'
+    ];
+
+    // Simple YAML frontmatter parser
+    function parseFrontmatter(content) {
+        const frontmatterRegex = /^---\n([\s\S]*?)\n---/;
+        const match = content.match(frontmatterRegex);
+
+        if (!match) {
+            console.error('No frontmatter found');
+            return null;
+        }
+
+        const yaml = match[1];
+        const data = {};
+        const lines = yaml.split('\n');
+
+        let currentKey = null;
+        let currentArray = null;
+        let inMultiline = false;
+        let multilineContent = [];
+
+        for (let i = 0; i < lines.length; i++) {
+            const line = lines[i];
+
+            // Skip empty lines
+            if (!line.trim()) continue;
+
+            // Check for array items
+            if (line.match(/^\s+- /)) {
+                const value = line.replace(/^\s+- /, '').trim().replace(/^["']|["']$/g, '');
+                if (currentArray) {
+                    currentArray.push(value);
+                }
+                continue;
+            }
+
+            // Check for multiline content continuation
+            if (inMultiline) {
+                if (line.startsWith('  ') && !line.match(/^\s+- /)) {
+                    multilineContent.push(line.substring(2));
+                    continue;
+                } else {
+                    // End of multiline
+                    data[currentKey] = multilineContent.join('\n').trim();
+                    inMultiline = false;
+                    multilineContent = [];
+                }
+            }
+
+            // Check for key-value pairs
+            const keyMatch = line.match(/^(\w+):\s*(.*)$/);
+            if (keyMatch) {
+                const key = keyMatch[1];
+                let value = keyMatch[2].trim();
+
+                // Remove quotes
+                value = value.replace(/^["']|["']$/g, '');
+
+                if (value === '|') {
+                    // Start multiline
+                    currentKey = key;
+                    inMultiline = true;
+                    multilineContent = [];
+                } else if (value === '') {
+                    // Start array
+                    currentArray = [];
+                    data[key] = currentArray;
+                    currentKey = key;
+                } else {
+                    // Simple value
+                    data[key] = value;
+                    currentKey = key;
+                    currentArray = null;
+                }
+            }
+        }
+
+        // Handle remaining multiline content
+        if (inMultiline && multilineContent.length > 0) {
+            data[currentKey] = multilineContent.join('\n').trim();
+        }
+
+        return data;
+    }
+
+    // Extract Vimeo ID from URL
+    function getVimeoId(url) {
+        if (!url) return null;
+        const match = url.match(/vimeo\.com\/(\d+)/);
+        return match ? match[1] : null;
+    }
+
+    // Create slug from title
+    function createSlug(title) {
+        return title.toLowerCase()
+            .replace(/[^\w\s-]/g, '')
+            .replace(/\s+/g, '-')
+            .replace(/--+/g, '-');
+    }
+
+    // Load a single video file
+    async function loadVideo(filename) {
+        try {
+            console.log('Loading:', filename);
+            const response = await fetch(`content/videos/${filename}`);
+
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+
+            const content = await response.text();
+            const data = parseFrontmatter(content);
+
+            if (!data) {
+                throw new Error(`Failed to parse frontmatter in ${filename}`);
+            }
+
+            // Add computed fields
+            data.slug = createSlug(data.title);
+            data.vimeo_id = getVimeoId(data.vimeo_url);
+            data.filename = filename;
+
+            console.log('Loaded video:', data.title);
+            return data;
+        } catch (error) {
+            console.error(`Error loading ${filename}:`, error);
+            return null;
+        }
+    }
+
+    // Load all videos
+    async function loadAllVideos() {
+        console.log('Loading all videos...');
+        const promises = VIDEO_FILES.map(filename => loadVideo(filename));
+        const videos = await Promise.all(promises);
+        const validVideos = videos.filter(v => v !== null);
+
+        // Sort by order field
+        validVideos.sort((a, b) => {
+            const orderA = parseInt(a.order) || 999;
+            const orderB = parseInt(b.order) || 999;
+            return orderA - orderB;
+        });
+
+        console.log(`Loaded ${validVideos.length} videos`);
+        return validVideos;
+    }
+
+    // Render filmography grid
+    function renderFilmography(videos) {
+        const grid = document.getElementById('filmography-grid');
+        if (!grid) {
+            console.error('filmography-grid element not found');
+            return;
+        }
+
+        if (videos.length === 0) {
+            grid.innerHTML = '<div class="loading-message">No videos found</div>';
+            return;
+        }
+
+        grid.innerHTML = '';
+
+        videos.forEach(video => {
+            const card = document.createElement('article');
+            card.className = 'film-card';
+
+            const link = document.createElement('a');
+            link.href = `film.html?slug=${video.slug}`;
+            link.className = 'film-card-link';
+
+            const img = document.createElement('img');
+            img.src = video.thumbnail;
+            img.alt = video.title;
+            img.className = 'film-thumbnail';
+            img.onerror = function() {
+                console.error('Failed to load image:', video.thumbnail);
+                this.src = 'assets/images/.gitkeep'; // Fallback
+            };
+
+            link.appendChild(img);
+            card.appendChild(link);
+
+            // Add title below image
+            const titleElement = document.createElement('h3');
+            titleElement.className = 'film-card-title';
+            titleElement.textContent = video.title;
+            card.appendChild(titleElement);
+
+            grid.appendChild(card);
+        });
+
+        console.log(`Rendered ${videos.length} video cards`);
+    }
+
+    // Render film detail page
+    async function renderFilmDetail() {
+        const params = new URLSearchParams(window.location.search);
+        const slug = params.get('slug');
+
+        console.log('Rendering film detail for slug:', slug);
+
+        if (!slug) {
+            console.error('No slug parameter found');
+            window.location.href = 'filmography.html';
+            return;
+        }
+
+        const videos = await loadAllVideos();
+        const video = videos.find(v => v.slug === slug);
+
+        if (!video) {
+            console.error('Video not found for slug:', slug);
+            window.location.href = 'filmography.html';
+            return;
+        }
+
+        // Update page title
+        document.title = `${video.title} - Cathrine Marchen Asmussen`;
+
+        // Render film detail
+        const detailContainer = document.getElementById('film-detail');
+        if (!detailContainer) {
+            console.error('film-detail element not found');
+            return;
+        }
+
+        // Build filmstriben links HTML
+        let filmstribenHTML = '';
+        if (video.filmstriben && Array.isArray(video.filmstriben) && video.filmstriben.length > 0) {
+            filmstribenHTML = `
+                <div class="film-links-section">
+                    ${video.filmstriben.map((link, i) => `
+                        <a href="${link}" target="_blank" rel="noopener" class="filmstriben-link">
+                            Watch on Filmstriben ${video.filmstriben.length > 1 ? `(${i + 1})` : ''}
+                        </a>
+                    `).join('')}
+                </div>
+            `;
+        }
+
+        // Build faith icon HTML with caption
+        let faithHTML = '';
+        if (video.faith_icon && video.faith) {
+            faithHTML = `
+                <div class="film-faith-icon">
+                    <img src="${video.faith_icon}" alt="${video.faith}" class="faith-icon-large">
+                    <p class="faith-caption">${video.faith}</p>
+                </div>
+            `;
+        }
+
+        // Convert markdown bold to HTML
+        function convertMarkdown(text) {
+            return text.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+        }
+
+        // Check if this is part of MY FAITH series and extract series info
+        let myFaithHTML = '';
+        let seriesInfo = '';
+        if (video.description && video.description.includes('MY FAITH')) {
+            // Extract series-related lines from description
+            const descLines = video.description.split('\n').filter(line => line.trim());
+            const seriesLines = descLines.filter(line =>
+                line.includes('MY FAITH') ||
+                line.includes('anthology series') ||
+                line.includes('ten independent films') ||
+                line.includes('all ages')
+            );
+
+            if (seriesLines.length > 0) {
+                seriesInfo = `
+                    <div class="series-info">
+                        <img src="assets/images/MinTro.png" alt="MY FAITH series" class="series-logo">
+                        ${seriesLines.map(line => `<p>${convertMarkdown(line)}</p>`).join('')}
+                    </div>
+                `;
+            }
+        }
+
+        // Build awards HTML - handle multi-line awards
+        let awardsHTML = '';
+        if (video.awards) {
+            const awardLines = video.awards.split('\n').filter(line => line.trim());
+            awardsHTML = awardLines.map(line => `<p class="film-awards">${convertMarkdown(line)}</p>`).join('');
+        }
+
+        // Build description HTML (exclude series info lines)
+        const descriptionLines = video.description ? video.description.split('\n').filter(line => {
+            const trimmed = line.trim();
+            if (!trimmed) return false;
+            // Exclude series info lines
+            if (trimmed.includes('MY FAITH') ||
+                trimmed.includes('anthology series') ||
+                trimmed.includes('ten independent films') ||
+                trimmed.includes('all ages')) {
+                return false;
+            }
+            return true;
+        }) : [];
+        const descriptionHTML = descriptionLines.map(line => `<p>${convertMarkdown(line)}</p>`).join('');
+
+        detailContainer.innerHTML = `
+            <div class="film-header">
+                <h2 class="film-detail-title">${video.title}</h2>
+            </div>
+
+            <div class="film-player">
+                <div class="video-wrapper video-wrapper-large">
+                    <iframe src="https://player.vimeo.com/video/${video.vimeo_id}"
+                            frameborder="0"
+                            allow="autoplay; fullscreen; picture-in-picture"
+                            allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="film-info-section">
+                <p class="film-meta">${video.year} · ${video.duration}</p>
+                ${awardsHTML}
+                ${faithHTML}
+            </div>
+
+            <div class="film-description-full">
+                ${descriptionHTML}
+            </div>
+
+            ${seriesInfo}
+            ${filmstribenHTML}
+
+            <div class="film-navigation">
+                <a href="filmography.html" class="btn btn-primary">← Back to Filmography</a>
+            </div>
+        `;
+
+        console.log('Film detail rendered successfully');
+    }
+
+    // Initialize based on page
+    async function init() {
+        console.log('Initializing video loader...');
+        console.log('Current path:', window.location.pathname);
+
+        const grid = document.getElementById('filmography-grid');
+        const detail = document.getElementById('film-detail');
+
+        if (grid) {
+            console.log('Found filmography grid');
+            const videos = await loadAllVideos();
+
+            // Show all films on both homepage and filmography page
+            console.log('Showing all films');
+            renderFilmography(videos);
+        }
+
+        if (detail) {
+            console.log('Found film detail container');
+            await renderFilmDetail();
+        }
+
+        console.log('Initialization complete');
+    }
+
+    // Run init when DOM is ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
+
+    // Expose for debugging
+    window.videoLoader = {
+        loadAllVideos,
+        loadVideo,
+        parseFrontmatter,
+        VIDEO_FILES
+    };
+
+})();

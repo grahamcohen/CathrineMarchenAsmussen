@@ -1,0 +1,138 @@
+# Decap CMS Configuration for Cathrine Marchen Asmussen Website
+
+backend:
+  name: github
+  repo: YOUR_USERNAME/YOUR_REPO_NAME # Update this with your GitHub repo
+  branch: main # or master, depending on your default branch
+  base_url: https://decapbridge.netlify.app # DecapBridge for authentication
+
+# Enable local backend for development
+# local_backend: true
+
+# Media files configuration
+media_folder: "assets/images"
+public_folder: "assets/images"
+
+# Site URL (update after deployment)
+# site_url: https://your-site.netlify.app
+
+# Collections configuration
+collections:
+  # Videos Collection - Main filmography management
+  - name: "videos"
+    label: "Videos"
+    label_singular: "Video"
+    folder: "content/videos"
+    create: true
+    slug: "{{fields.order}}-{{slug}}"
+    identifier_field: "title"
+    extension: "md"
+    format: "frontmatter"
+    fields:
+      - { label: "Title", name: "title", widget: "string", required: true }
+      - { label: "Year", name: "year", widget: "number", value_type: "int", required: true }
+      - { label: "Duration", name: "duration", widget: "string", required: true, hint: "e.g., 14 min" }
+      - { label: "Vimeo URL", name: "vimeo_url", widget: "string", required: true, hint: "Full Vimeo URL (e.g., https://vimeo.com/1147617209)" }
+      - { label: "Thumbnail Image", name: "thumbnail", widget: "image", required: true }
+      - { label: "Faith/Category", name: "faith", widget: "string", required: false }
+      - { label: "Faith Icon", name: "faith_icon", widget: "image", required: false }
+      - { label: "Display Order", name: "order", widget: "number", value_type: "int", required: true, hint: "Display order (1 = first)" }
+      - { label: "Awards", name: "awards", widget: "string", required: false }
+      - { label: "Description", name: "description", widget: "text", required: true }
+      - label: "Filmstriben Links"
+        name: "filmstriben"
+        widget: "list"
+        required: false
+        field: { label: "URL", name: "url", widget: "string" }
+
+  # Site Settings
+  - name: "settings"
+    label: "Site Settings"
+    files:
+      - label: "Site Configuration"
+        name: "site"
+        file: "content/site.md"
+        fields:
+          - { label: "Site Title", name: "title", widget: "string" }
+          - { label: "Tagline", name: "tagline", widget: "string" }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Phone", name: "phone", widget: "string" }
+
+  # Filmography
+  - name: "filmography"
+    label: "Filmography"
+    files:
+      - label: "Films"
+        name: "films"
+        file: "content/filmography.md"
+        fields:
+          - label: "Films"
+            name: "films"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Year", name: "year", widget: "number", value_type: "int" }
+              - { label: "Duration", name: "duration", widget: "string" }
+              - { label: "Vimeo ID", name: "vimeoId", widget: "string", hint: "Just the ID number from the Vimeo URL (e.g., 1147617209)" }
+              - { label: "Description", name: "description", widget: "markdown" }
+              - { label: "Awards", name: "awards", widget: "string", required: false }
+              - label: "Filmstriben Links"
+                name: "filmstriben"
+                widget: "list"
+                required: false
+                field: { label: "URL", name: "url", widget: "string" }
+
+  # Portrait
+  - name: "portrait"
+    label: "Portrait"
+    files:
+      - label: "Portrait Content"
+        name: "portrait"
+        file: "content/portrait.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Introduction", name: "intro", widget: "markdown" }
+          - label: "Featured Portrait"
+            name: "featured_portrait"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Year", name: "year", widget: "number", value_type: "int" }
+              - { label: "Duration", name: "duration", widget: "string" }
+              - { label: "Vimeo ID", name: "vimeoId", widget: "string" }
+              - { label: "Description", name: "description", widget: "string", required: false }
+
+  # About
+  - name: "about"
+    label: "About"
+    files:
+      - label: "About Content"
+        name: "about"
+        file: "content/about.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Name", name: "name", widget: "string" }
+          - { label: "Profession", name: "profession", widget: "string" }
+          - { label: "Biography", name: "bio", widget: "markdown" }
+          - label: "Acknowledgements"
+            name: "acknowledgements"
+            widget: "list"
+            field: { label: "Award", name: "award", widget: "string" }
+          - label: "Links"
+            name: "links"
+            widget: "object"
+            fields:
+              - { label: "IMDb URL", name: "imdb", widget: "string" }
+              - { label: "Danish Film Institute URL", name: "dfi", widget: "string" }
+
+# Editorial workflow (optional - enables draft/review/publish flow)
+publish_mode: simple
+
+# Preview configuration (optional)
+# show_preview_links: true
+
+# Slug configuration
+slug:
+  encoding: "ascii"
+  clean_accents: true
+  sanitize_replacement: "-"
