@@ -10,7 +10,7 @@ order: 3
 description: |
   **Short film about setting the bar high**
 
-  Despite one of Lukas's heart valves failing to close properly
+  – despite one of Lukas's heart valves failing to close properly
 
   The film is part of the anthology series MY FAITH, in which children of different faiths face recognizable challenges. The series consists of ten independent films for all ages (7+). Lukas is a Pentecostal Christian.
 filmstriben:
