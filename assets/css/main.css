@@ -891,12 +891,12 @@ img {
     line-height: 1.5;
     display: flex;
     gap: var(--spacing-md);
-    align-items: flex-start;
+    align-items: center;
 }
 
 .series-logo {
     flex-shrink: 0;
-    width: 80px;
+    width: 110px;
     height: auto;
     object-fit: contain;
 }
@@ -1053,7 +1053,7 @@ img {
     }
 
     .series-logo {
-        width: 60px;
+        width: 80px;
         margin-bottom: var(--spacing-sm);
     }
 }
