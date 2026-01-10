@@ -339,9 +339,9 @@
                 // It will be a pattern like "Name is a Religion." or "Name has faith in Something."
                 const sentence3Match = fullText.match(/(?:^|\s)([\w\s]+(?:is a|has faith in)[^.]+\.)\s*$/);
 
-                const sentence1 = sentence1Match ? sentence1Match[0].trim() : '';
-                const sentence2 = sentence2Match ? sentence2Match[0].trim() : '';
-                const sentence3 = sentence3Match ? sentence3Match[1].trim() : '';
+                const sentence1 = sentence1Match ? sentence1Match[0].trim().replace(/\.$/, '') : '';
+                const sentence2 = sentence2Match ? sentence2Match[0].trim().replace(/\.$/, '') : '';
+                const sentence3 = sentence3Match ? sentence3Match[1].trim().replace(/\.$/, '') : '';
 
                 seriesInfo = `
                     <div class="series-info">
