@@ -156,6 +156,7 @@ img {
     letter-spacing: 0.1em;
     font-weight: 400;
     position: relative;
+    color: var(--color-text-brown);
 }
 
 .main-nav a.active::after {
@@ -923,8 +924,9 @@ img {
 
 .film-description-full {
     margin-bottom: var(--spacing-md);
-    padding-bottom: var(--spacing-md);
-    border-bottom: 1px solid var(--color-border);
+    padding: var(--spacing-md);
+    background-color: rgb(219, 229, 231);
+    border-radius: 4px;
 }
 
 .film-description-full p {
@@ -977,6 +979,7 @@ img {
     font-size: 0.875rem;
     text-transform: uppercase;
     letter-spacing: 0.1em;
+    color: var(--color-text-brown);
 }
 
 .current-lang {
@@ -984,11 +987,11 @@ img {
 }
 
 .lang-divider {
-    color: var(--color-text-light);
+    color: var(--color-text-brown);
 }
 
 .lang-link {
-    color: var(--color-text-light);
+    color: var(--color-text-brown);
     opacity: 0.6;
     transition: opacity 0.2s ease;
 }
