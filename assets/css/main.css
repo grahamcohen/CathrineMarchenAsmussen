@@ -889,21 +889,32 @@ img {
     font-size: 0.875rem;
     color: var(--color-text-light);
     line-height: 1.5;
+    display: flex;
+    gap: var(--spacing-md);
+    align-items: flex-start;
+}
+
+.series-logo {
+    flex-shrink: 0;
+    width: 80px;
+    height: auto;
+    object-fit: contain;
+}
+
+.series-text {
+    flex: 1;
 }
 
 .series-info p {
-    margin: 0.25rem 0;
+    margin: 0.5rem 0;
+}
+
+.series-info p:first-child {
+    margin-top: 0;
 }
 
 .series-info p:last-child {
     margin-bottom: 0;
-}
-
-.series-logo {
-    max-width: 120px;
-    height: auto;
-    margin-bottom: var(--spacing-sm);
-    opacity: 0.8;
 }
 
 .film-player {
@@ -1034,6 +1045,16 @@ img {
 
     .film-detail-content {
         padding: var(--spacing-md);
+    }
+
+    .series-info {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .series-logo {
+        width: 60px;
+        margin-bottom: var(--spacing-sm);
     }
 }
 
