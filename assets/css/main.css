@@ -138,7 +138,7 @@ img {
     font-weight: 400;
     letter-spacing: 0.03em;
     margin: 0;
-    text-transform: uppercase;
+    text-transform: lowercase;
 }
 
 .site-title a {
@@ -607,7 +607,7 @@ img {
     margin-bottom: var(--spacing-xs);
     font-size: 0.875rem;
     font-family: var(--font-serif);
-    text-transform: uppercase;
+    text-transform: lowercase;
     letter-spacing: 0.03em;
     color: var(--color-text-brown);
 }
