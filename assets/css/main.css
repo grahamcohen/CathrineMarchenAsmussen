@@ -884,8 +884,8 @@ img {
     margin-top: var(--spacing-lg);
     margin-bottom: var(--spacing-md);
     padding: var(--spacing-md);
-    background-color: var(--color-bg-warm);
-    border-left: 2px solid var(--color-border);
+    /*background-color: var(--color-bg-warm);
+    border-left: 2px solid var(--color-border);*/
     font-size: 0.875rem;
     color: var(--color-text-light);
     line-height: 1.5;
