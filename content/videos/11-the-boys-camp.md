@@ -9,7 +9,7 @@ awards: "Nominated Robert"
 description: |
   **EXCERPT FILMMAGAZINE EKKO**
 
-  A poignant story about a group of vulnerable boys who meet at Save the Children's summer camp. They are challenged to find resources within themselves that neither they nor others dreamed they had (5 stars)
+  A poignant story about a group of vulnerable boys who meet at Save the Children's summer camp. They are challenged to find resources within themselves that neither they nor others dreamed they had. (5 stars)
 filmstriben:
   - "https://fjernleje.filmstriben.dk/film/9000000917/drengelejren"
 ---
