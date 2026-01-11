@@ -136,9 +136,9 @@
         // Update description (shown as intro on portrait page)
         const descriptionEl = document.querySelector('.film-description-full');
         if (descriptionEl && data.featured_portrait && data.featured_portrait.description) {
-            descriptionEl.innerHTML = data.featured_portrait.description.split('\n\n').map(p =>
-                `<p>${p.replace(/\n/g, '<br>')}</p>`
-            ).join('');
+            // Split on newlines and create paragraphs, preserving all lines
+            const lines = data.featured_portrait.description.split('\n').filter(l => l.trim());
+            descriptionEl.innerHTML = lines.map(line => `<p>${line}</p>`).join('');
         }
 
         // Update title if needed (though it's currently shown as static text)
