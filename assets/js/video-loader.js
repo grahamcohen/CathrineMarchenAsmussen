@@ -155,6 +155,16 @@
                 throw new Error(`Failed to parse frontmatter in ${filename}`);
             }
 
+            // Apply language-specific fields if Danish is selected
+            const currentLang = window.getCurrentLanguage ? window.getCurrentLanguage() : 'en';
+            if (currentLang === 'da') {
+                if (data.title_da) data.title = data.title_da;
+                if (data.subtitle_da) data.subtitle = data.subtitle_da;
+                if (data.description_da) data.description = data.description_da;
+                if (data.faith_da) data.faith = data.faith_da;
+                if (data.awards_da) data.awards = data.awards_da;
+            }
+
             // Add computed fields
             data.slug = createSlug(data.title);
             data.vimeo_id = getVimeoId(data.vimeo_url);
