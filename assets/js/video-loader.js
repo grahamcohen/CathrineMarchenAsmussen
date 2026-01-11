@@ -216,7 +216,8 @@
             card.className = 'film-card';
 
             const link = document.createElement('a');
-            link.href = `film.html?slug=${video.slug}`;
+            // Use order as primary identifier, slug for SEO
+            link.href = `film.html?id=${video.order}&slug=${video.slug}`;
             link.className = 'film-card-link';
 
             const img = document.createElement('img');
@@ -256,23 +257,40 @@
     // Render film detail page
     async function renderFilmDetail() {
         const params = new URLSearchParams(window.location.search);
+        const id = params.get('id');
         const slug = params.get('slug');
 
-        console.log('Rendering film detail for slug:', slug);
+        console.log('Rendering film detail for id:', id, 'slug:', slug);
 
-        if (!slug) {
-            console.error('No slug parameter found');
+        if (!id && !slug) {
+            console.error('No id or slug parameter found');
             window.location.href = 'filmography.html';
             return;
         }
 
         const videos = await loadAllVideos();
-        const video = videos.find(v => v.slug === slug);
+
+        // Try to find by id first (stable across languages), then by slug (backwards compat)
+        let video;
+        if (id) {
+            video = videos.find(v => v.order == id);
+        }
+        if (!video && slug) {
+            video = videos.find(v => v.slug === slug);
+        }
 
         if (!video) {
-            console.error('Video not found for slug:', slug);
+            console.error('Video not found for id:', id, 'slug:', slug);
             window.location.href = 'filmography.html';
             return;
+        }
+
+        // Update URL to include both id and current language's slug (for SEO)
+        const currentUrl = new URL(window.location);
+        if (currentUrl.searchParams.get('id') != video.order || currentUrl.searchParams.get('slug') !== video.slug) {
+            currentUrl.searchParams.set('id', video.order);
+            currentUrl.searchParams.set('slug', video.slug);
+            window.history.replaceState({}, '', currentUrl);
         }
 
         // Update page title

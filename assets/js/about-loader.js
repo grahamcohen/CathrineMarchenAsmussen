@@ -26,31 +26,43 @@
 
         yaml.split('\n').forEach(line => {
             if (line.match(/^(\w+):\s*\|/)) {
-                // Start of multiline field
+                // Save previous multiline field if exists
+                if (isMultiline && currentKey) {
+                    data[currentKey] = currentValue;
+                }
+                // Start of new multiline field
                 const key = line.match(/^(\w+):/)[1];
                 currentKey = key;
                 currentValue = '';
                 isMultiline = true;
             } else if (line.match(/^(\w+):\s*"(.*)"/)) {
+                // Save previous multiline field if exists
+                if (isMultiline && currentKey) {
+                    data[currentKey] = currentValue;
+                    isMultiline = false;
+                }
                 // Simple quoted string
                 const match = line.match(/^(\w+):\s*"(.*)"/);
                 data[match[1]] = match[2];
-                isMultiline = false;
             } else if (line.match(/^(\w+):\s*(.*)/)) {
+                // Save previous multiline field if exists
+                if (isMultiline && currentKey) {
+                    data[currentKey] = currentValue;
+                    isMultiline = false;
+                }
                 // Simple unquoted value
                 const match = line.match(/^(\w+):\s*(.*)/);
                 if (!match[2].startsWith('[')) {
                     data[match[1]] = match[2];
-                    isMultiline = false;
                 }
-            } else if (isMultiline && line.startsWith('  ')) {
-                // Continuation of multiline field
-                currentValue += (currentValue ? '\n' : '') + line.substring(2);
-            } else if (isMultiline && currentKey && !line.startsWith('  ') && !line.match(/^\w+:/)) {
-                // End of multiline field
-                data[currentKey] = currentValue;
-                isMultiline = false;
-                currentKey = null;
+            } else if (isMultiline) {
+                // Continuation of multiline field - include ALL lines (even empty ones)
+                if (line.startsWith('  ')) {
+                    currentValue += (currentValue ? '\n' : '') + line.substring(2);
+                } else if (line.trim() === '') {
+                    // Empty line within multiline - preserve it
+                    currentValue += '\n';
+                }
             }
         });
 
