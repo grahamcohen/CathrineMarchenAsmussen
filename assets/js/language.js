@@ -14,19 +14,20 @@
     // Set language and reload page
     function setLanguage(lang) {
         localStorage.setItem('site-language', lang);
-        window.dispatchEvent(new CustomEvent('languagechange', { detail: { language: lang } }));
+        // Reload the page to apply the new language
         location.reload();
     }
 
     // Update UI based on current language
     function updateLanguageUI() {
         const currentLang = getCurrentLanguage();
-        const langLinks = document.querySelectorAll('.lang-link, .current-lang');
 
-        // Update language switcher display
-        document.querySelectorAll('.current-lang').forEach(el => {
-            el.textContent = currentLang.toUpperCase();
-        });
+        // Update language switcher to show only the alternate language
+        const languageSwitcher = document.querySelector('.language-switcher');
+        if (languageSwitcher) {
+            const alternateLang = currentLang === 'en' ? 'DA' : 'EN';
+            languageSwitcher.innerHTML = `<a href="#" class="lang-switch-link">${alternateLang}</a>`;
+        }
 
         // Update navigation text
         const navTexts = {
@@ -46,11 +47,14 @@
         if (nav) {
             const links = nav.querySelectorAll('a');
             links.forEach(link => {
-                if (link.href.includes('filmography.html')) {
+                const href = link.getAttribute('href');
+                if (href && href.includes('filmography.html')) {
                     link.textContent = navTexts[currentLang].filmography;
-                } else if (link.href.includes('portrait.html')) {
+                } else if (href && href.includes('index.html')) {
+                    link.textContent = navTexts[currentLang].filmography;
+                } else if (href && href.includes('portrait.html')) {
                     link.textContent = navTexts[currentLang].portrait;
-                } else if (link.href.includes('about.html')) {
+                } else if (href && href.includes('about.html')) {
                     link.textContent = navTexts[currentLang].about;
                 }
             });
@@ -61,9 +65,9 @@
     function init() {
         const currentLang = getCurrentLanguage();
 
-        // Set up click handlers for language links
+        // Set up click handler for language switching
         document.addEventListener('click', function(e) {
-            if (e.target.classList.contains('lang-link') || e.target.classList.contains('current-lang')) {
+            if (e.target.classList.contains('lang-switch-link')) {
                 e.preventDefault();
                 const newLang = currentLang === 'en' ? 'da' : 'en';
                 setLanguage(newLang);

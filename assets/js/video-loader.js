@@ -286,13 +286,15 @@
         }
 
         // Build filmstriben links HTML
+        const currentLang = window.getCurrentLanguage ? window.getCurrentLanguage() : 'en';
+        const watchOnText = currentLang === 'da' ? 'Se på Filmstriben' : 'Watch on Filmstriben';
         let filmstribenHTML = '';
         if (video.filmstriben && Array.isArray(video.filmstriben) && video.filmstriben.length > 0) {
             filmstribenHTML = `
                 <div class="film-links-section">
                     ${video.filmstriben.map((link, i) => `
                         <a href="${link}" target="_blank" rel="noopener" class="filmstriben-link">
-                            Watch on Filmstriben ${video.filmstriben.length > 1 ? `(${i + 1})` : ''}
+                            ${watchOnText} ${video.filmstriben.length > 1 ? `(${i + 1})` : ''}
                         </a>
                     `).join('')}
                 </div>
@@ -317,41 +319,64 @@
         // Check if this is part of MY FAITH series and extract series info
         let myFaithHTML = '';
         let seriesInfo = '';
-        if (video.description && video.description.includes('MY FAITH')) {
+        const isMyFaithSeries = video.description && (video.description.includes('MY FAITH') || video.description.includes('MIN TRO'));
+
+        if (isMyFaithSeries) {
             // Extract series-related lines from description
             const descLines = video.description.split('\n').filter(line => line.trim());
-            const seriesLines = descLines.filter(line =>
-                line.includes('MY FAITH') ||
-                line.includes('anthology series') ||
-                line.includes('ten independent films') ||
-                line.includes('all ages') ||
-                line.includes('is a Buddhist') ||
-                line.includes('is a Jehovah Witness') ||
-                line.includes('is a Pentecostal Christian') ||
-                line.includes('is a Witch') ||
-                line.includes('is a Hindu') ||
-                line.includes('is a Sikh') ||
-                line.includes('is a Danish Protestant Church Christian') ||
-                line.includes('has faith in Science') ||
-                line.includes('is a Jew') ||
-                line.includes('is a Sufi Muslim')
-            );
+            const seriesLines = descLines.filter(line => {
+                const lower = line.toLowerCase();
+                return (
+                    line.includes('MY FAITH') || line.includes('MIN TRO') ||
+                    line.includes('anthology series') || line.includes('antologiserien') ||
+                    line.includes('ten independent films') || line.includes('ti selvstændige') ||
+                    line.includes('all ages') || line.includes('alle aldre') ||
+                    // English patterns
+                    line.includes('is a Buddhist') || line.includes('is a Jehovah Witness') ||
+                    line.includes('is a Pentecostal Christian') || line.includes('is a Witch') ||
+                    line.includes('is a Hindu') || line.includes('is a Sikh') ||
+                    line.includes('is a Danish Protestant Church Christian') ||
+                    line.includes('has faith in Science') || line.includes('is a Jew') ||
+                    line.includes('is a Sufi Muslim') ||
+                    // Danish patterns
+                    lower.includes('er buddhist') || lower.includes('er jehovas vidne') ||
+                    lower.includes('er pinsekirke') || lower.includes('er heks') ||
+                    lower.includes('er hinduist') || lower.includes('er sikh') ||
+                    lower.includes('er folkekirke') || lower.includes('har tro på videnskab') ||
+                    lower.includes('er jøde') || lower.includes('er sufi-muslim')
+                );
+            });
 
             if (seriesLines.length > 0) {
                 // Combine all series lines into one text block
                 const fullText = seriesLines.join(' ');
 
-                // Extract the 3 sentences:
-                const sentence1Match = fullText.match(/The film is part of the anthology series MY FAITH[^.]*challenges\./);
-                const sentence2Match = fullText.match(/The series consists of ten independent films[^.]*\(7\+\)\./);
+                let sentence1 = '';
+                let sentence2 = '';
+                let sentence3 = '';
 
-                // For sentence 3, find the character religion line
-                // It will be a pattern like "Name is a Religion." or "Name has faith in Something."
-                const sentence3Match = fullText.match(/(?:^|\s)([\w\s]+(?:is a|has faith in)[^.]+\.)\s*$/);
+                // Check if Danish or English
+                if (fullText.includes('MIN TRO')) {
+                    // Danish patterns
+                    const s1Match = fullText.match(/Filmen indgår i antologiserien MIN TRO[^.]*udfordringer\./);
+                    const s2Match = fullText.match(/Serien består af ti selvstændige film[^.]*\(7\+\)\./);
+                    // Match character religion - Danish pattern
+                    const s3Match = fullText.match(/(?:^|\s)([\wæøåÆØÅ\s-]+(?:er |har tro på )[^.]+\.)\s*$/);
 
-                const sentence1 = sentence1Match ? sentence1Match[0].trim().replace(/\.$/, '') : '';
-                const sentence2 = sentence2Match ? sentence2Match[0].trim().replace(/\.$/, '') : '';
-                const sentence3 = sentence3Match ? sentence3Match[1].trim().replace(/\.$/, '') : '';
+                    sentence1 = s1Match ? s1Match[0].trim().replace(/\.$/, '') : '';
+                    sentence2 = s2Match ? s2Match[0].trim().replace(/\.$/, '') : '';
+                    sentence3 = s3Match ? s3Match[1].trim().replace(/\.$/, '') : '';
+                } else {
+                    // English patterns
+                    const s1Match = fullText.match(/The film is part of the anthology series MY FAITH[^.]*challenges\./);
+                    const s2Match = fullText.match(/The series consists of ten independent films[^.]*\(7\+\)\./);
+                    // Match character religion - English pattern
+                    const s3Match = fullText.match(/(?:^|\s)([\w\s]+(?:is a|has faith in)[^.]+\.)\s*$/);
+
+                    sentence1 = s1Match ? s1Match[0].trim().replace(/\.$/, '') : '';
+                    sentence2 = s2Match ? s2Match[0].trim().replace(/\.$/, '') : '';
+                    sentence3 = s3Match ? s3Match[1].trim().replace(/\.$/, '') : '';
+                }
 
                 seriesInfo = `
                     <div class="series-info">
@@ -377,21 +402,25 @@
         const descriptionLines = video.description ? video.description.split('\n').filter(line => {
             const trimmed = line.trim();
             if (!trimmed) return false;
-            // Exclude series info lines
-            if (trimmed.includes('MY FAITH') ||
-                trimmed.includes('anthology series') ||
-                trimmed.includes('ten independent films') ||
-                trimmed.includes('all ages') ||
-                trimmed.includes('is a Buddhist') ||
-                trimmed.includes('is a Jehovah Witness') ||
-                trimmed.includes('is a Pentecostal Christian') ||
-                trimmed.includes('is a Witch') ||
-                trimmed.includes('is a Hindu') ||
-                trimmed.includes('is a Sikh') ||
+            const lower = trimmed.toLowerCase();
+            // Exclude series info lines (English and Danish)
+            if (trimmed.includes('MY FAITH') || trimmed.includes('MIN TRO') ||
+                trimmed.includes('anthology series') || trimmed.includes('antologiserien') ||
+                trimmed.includes('ten independent films') || trimmed.includes('ti selvstændige') ||
+                trimmed.includes('all ages') || trimmed.includes('alle aldre') ||
+                // English patterns
+                trimmed.includes('is a Buddhist') || trimmed.includes('is a Jehovah Witness') ||
+                trimmed.includes('is a Pentecostal Christian') || trimmed.includes('is a Witch') ||
+                trimmed.includes('is a Hindu') || trimmed.includes('is a Sikh') ||
                 trimmed.includes('is a Danish Protestant Church Christian') ||
-                trimmed.includes('has faith in Science') ||
-                trimmed.includes('is a Jew') ||
-                trimmed.includes('is a Sufi Muslim')) {
+                trimmed.includes('has faith in Science') || trimmed.includes('is a Jew') ||
+                trimmed.includes('is a Sufi Muslim') ||
+                // Danish patterns
+                lower.includes('er buddhist') || lower.includes('er jehovas vidne') ||
+                lower.includes('er pinsekirke') || lower.includes('er heks') ||
+                lower.includes('er hinduist') || lower.includes('er sikh') ||
+                lower.includes('er folkekirke') || lower.includes('har tro på videnskab') ||
+                lower.includes('er jøde') || lower.includes('er sufi-muslim')) {
                 return false;
             }
             return true;
@@ -438,7 +467,7 @@
             ${filmstribenHTML}
 
             <div class="film-navigation">
-                <a href="filmography.html" class="btn btn-primary">← Back to Filmography</a>
+                <a href="filmography.html" class="btn btn-primary">← ${currentLang === 'da' ? 'Tilbage til Filmografi' : 'Back to Filmography'}</a>
             </div>
         `;
 
