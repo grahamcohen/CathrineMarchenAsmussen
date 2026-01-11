@@ -1,13 +1,13 @@
 ---
 title: "FAITH, HOPE AND LOVE"
-title_da: "TRO HÅB OG KÆRLIGHED"
+title_da: "TRO, HÅB OG KÆRLIGHED"
 year: 2023
 duration: "17 min"
 vimeo_url: "https://vimeo.com/1147411908"
 thumbnail: "assets/images/FaithHopeAndLove.png"
 faith_icon: "assets/images/DanishProtestantChurch.png"
 faith: "Danish protestant church"
-faith_da: "Dansk folkekirke"
+faith_da: "Folkekirken"
 order: 7
 description: |
   **Short film about longing**
@@ -22,9 +22,9 @@ description_da: |
 
   Signe savner sin far
 
-  Han sejler og kommer ikke hjem til jul
+  Han er sømand og ikke hjemme til jul
 
-  Filmen indgår i antologiserien MIN TRO, hvor børn af forskellige trosretninger står over for genkendelige udfordringer. Serien består af ti selvstændige film for alle (7+). Signe er dansk folkekirke kristen
+  Filmen indgår i antologiserien MIN TRO, hvor børn med forskellige overbevisninger møder genkendelige udfordringer. Serien består af ti selvstændige film til alle aldre (7+). Signe er folkekirke kristen
 filmstriben:
   - "https://biblioteket.filmstriben.dk/film/9372630992/min-tro---kristendom---tro-hab-og-kaerlighed"
   - "https://fjernleje.filmstriben.dk/film/9000006698/min-tro-2-afsnit-kristendom-tro-hab-og-kaerlighed-buddhisme-man-giver-bare-sit-hjerte"

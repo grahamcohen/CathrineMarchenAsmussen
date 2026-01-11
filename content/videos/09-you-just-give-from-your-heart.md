@@ -20,11 +20,11 @@ description: |
 description_da: |
   **Kortfilm om at give og modtage**
 
-  Htet Linn vil gerne have en hund
+  Htet Linn ønsker sig en hund
 
-  Hvis han giver, modtager han
+  Hvis han giver, så får han
 
-  Filmen indgår i antologiserien MIN TRO, hvor børn af forskellige trosretninger står over for genkendelige udfordringer. Serien består af ti selvstændige film for alle (7+). Htet Linn er buddhist
+  Filmen indgår i antologiserien MIN TRO, hvor børn med forskellige overbevisninger møder genkendelige udfordringer. Serien består af ti selvstændige film til alle aldre (7+). Htet Linn er buddhist
 filmstriben:
   - "https://biblioteket.filmstriben.dk/film/9372630996/min-tro---buddhisme---man-giver-bare-fra-sit-hjerte"
   - "https://fjernleje.filmstriben.dk/film/9000006698/min-tro-2-afsnit-kristendom-tro-hab-og-kaerlighed-buddhisme-man-giver-bare-sit-hjerte"

@@ -16,11 +16,11 @@ description: |
 
   The film is part of the anthology series MY FAITH, in which children of different faiths face recognizable challenges. The series consists of ten independent films for all ages (7+). Leah is a Jew.
 description_da: |
-  **Kortfilm om tab**
+  **Kortfilm om at miste**
 
-  Leah finder trøst i at spille violin for de gamle på det jødiske plejehjem, nu hendes egne bedsteforældre er døde
+  Det er en trøst for Leah at spille violin for de gamle på det jødiske plejehjem, nu hvor hendes egne bedsteforældre er døde
 
-  Filmen indgår i antologiserien MIN TRO, hvor børn af forskellige trosretninger står over for genkendelige udfordringer. Serien består af ti selvstændige film for alle (7+). Leah er jøde
+  Filmen indgår i antologiserien MIN TRO, hvor børn med forskellige overbevisninger møder genkendelige udfordringer. Serien består af ti selvstændige film til alle aldre (7+). Leah er jøde
 filmstriben:
   - "https://biblioteket.filmstriben.dk/film/9372629187/min-tro---den-jodiske-violin"
   - "https://fjernleje.filmstriben.dk/film/9000005687/min-tro-3-afsnit-den-jodiske-violin-be-om-et-mirakel-hvem-er-jeg"

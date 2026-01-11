@@ -20,11 +20,11 @@ description: |
 description_da: |
   **Kortfilm om vejen til fred**
 
-  Anvita vil være statsminister for at bringe fred til verden
+  Anvita vil gerne være statsminister, så hun kan skabe fred i verden
 
-  Hun søger hjælp hos den lokale munk in Vanløse
+  Hun rækker ud til den lokale munk i Vanløse efter hjælp
 
-  Filmen indgår i antologiserien MIN TRO, hvor børn af forskellige trosretninger står over for genkendelige udfordringer. Serien består af ti selvstændige film for alle (7+). Anvita er hinduist
+  Filmen indgår i antologiserien MIN TRO, hvor børn med forskellige overbevisninger møder genkendelige udfordringer. Serien består af ti selvstændige film til alle aldre (7+). Anvita er hindu
 filmstriben:
   - "https://biblioteket.filmstriben.dk/film/9372630290/min-tro---verden-er-en-stor-sjael"
   - "https://fjernleje.filmstriben.dk/film/9000006697/min-tro-2-afsnit-verden-er-en-stor-sjael-kan-dinosaurerne-genopsta"

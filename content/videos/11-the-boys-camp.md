@@ -7,7 +7,7 @@ vimeo_url: "https://vimeo.com/1147391383"
 thumbnail: "assets/images/TheBoysCamp.png"
 order: 11
 awards: "Nominated Robert"
-awards_da: "Nomineret Robert"
+awards_da: "Nomineret RoberT"
 description: |
   **EXCERPT FILMMAGAZINE EKKO**
 
@@ -15,7 +15,7 @@ description: |
 description_da: |
   **UDDRAG FILMMAGASINET EKKO**
 
-  En rørende historie om en gruppe sårbare drenge, der mødes på Red Barnets sommerlejr. De udfordres til at finde ressourcer i sig selv, som hverken de eller andre havde drømt om de havde (5 stjerner)
+  En gribende fortælling om en håndfuld udsatte drenge, som mødes på Red Barnets sommerlejr. De udforders til at finde ressourcer i sig selv som hverken de selv eller andre drømte om, at de havde (5 stjerner)
 filmstriben:
   - "https://fjernleje.filmstriben.dk/film/9000000917/drengelejren"
 ---
