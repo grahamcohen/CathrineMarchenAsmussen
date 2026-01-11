@@ -338,10 +338,29 @@
             );
 
             if (seriesLines.length > 0) {
+                // Combine all series lines into one text block
+                const fullText = seriesLines.join(' ');
+
+                // Extract the 3 sentences:
+                const sentence1Match = fullText.match(/The film is part of the anthology series MY FAITH[^.]*challenges\./);
+                const sentence2Match = fullText.match(/The series consists of ten independent films[^.]*\(7\+\)\./);
+
+                // For sentence 3, find the character religion line
+                // It will be a pattern like "Name is a Religion." or "Name has faith in Something."
+                const sentence3Match = fullText.match(/(?:^|\s)([\w\s]+(?:is a|has faith in)[^.]+\.)\s*$/);
+
+                const sentence1 = sentence1Match ? sentence1Match[0].trim().replace(/\.$/, '') : '';
+                const sentence2 = sentence2Match ? sentence2Match[0].trim().replace(/\.$/, '') : '';
+                const sentence3 = sentence3Match ? sentence3Match[1].trim().replace(/\.$/, '') : '';
+
                 seriesInfo = `
                     <div class="series-info">
                         <img src="assets/images/MinTro.png" alt="MY FAITH series" class="series-logo">
-                        ${seriesLines.map(line => `<p>${convertMarkdown(line)}</p>`).join('')}
+                        <div class="series-text">
+                            ${sentence1 ? `<p>${convertMarkdown(sentence1)}</p>` : ''}
+                            ${sentence2 ? `<p>${convertMarkdown(sentence2)}</p>` : ''}
+                            ${sentence3 ? `<p>${convertMarkdown(sentence3)}</p>` : ''}
+                        </div>
                     </div>
                 `;
             }
