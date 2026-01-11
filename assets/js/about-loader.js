@@ -90,12 +90,17 @@
             professionEl.textContent = data.profession;
         }
 
-        // Update bio
+        // Update bio - preserve all line breaks and paragraphs
         const bioEl = document.querySelector('.about-bio');
         if (bioEl && data.bio) {
-            bioEl.innerHTML = data.bio.split('\n\n').map(p =>
-                `<p>${p.replace(/\n/g, '<br>')}</p>`
-            ).join('');
+            // Split on double newlines for paragraphs, but preserve single line breaks within paragraphs
+            const paragraphs = data.bio.split('\n\n');
+            bioEl.innerHTML = paragraphs.map(p => {
+                const trimmed = p.trim();
+                if (!trimmed) return '';
+                // Replace single newlines with <br> tags
+                return `<p>${trimmed.replace(/\n/g, '<br>')}</p>`;
+            }).filter(p => p).join('');
         }
 
         // Update section headings
