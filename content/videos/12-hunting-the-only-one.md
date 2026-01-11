@@ -11,9 +11,9 @@ description: |
 
   "A subtle, understated documentary that evokes deadpan comedy memories reminiscent of Jim Jarmusch and Aki Kaurismäki"
 description_da: |
-  **FILMSTRIBEN CITAT**
+  **FILMSTRIBEN OM FILMEN**
 
-  "En subtil, afdæmpet dokumentar, der vækker deadpan komiske minder, der minder om Jim Jarmusch og Aki Kaurismäki"
+  "En underfundigt, underspillet dokumentarfilm , der vækker mindelser til deadpan-komik som hos Jim Jarmusch og Aki Kaurismäki"
 filmstriben:
   - "https://fjernleje.filmstriben.dk/film/9000000213/jagten-pa-den-eneste-ene"
 ---

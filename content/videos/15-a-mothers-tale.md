@@ -11,9 +11,9 @@ description: |
 
   A story about the cost of putting children first
 description_da: |
-  Kløften mellem en tyrkisk landsby og Danmark
+  Afstanden mellem en tyrkisk landsby og Danmark
 
-  En historie om omkostningerne ved at sætte børnene først
+  En fortælling om prisen for at sætte børnene først
 filmstriben:
   - "https://biblioteket.filmstriben.dk/film/9000000453/en-mors-historie"
 ---
