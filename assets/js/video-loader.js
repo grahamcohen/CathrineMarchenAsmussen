@@ -378,8 +378,8 @@
                     // Danish patterns
                     const s1Match = fullText.match(/Filmen indgår i antologiserien MIN TRO[^.]*udfordringer\./);
                     const s2Match = fullText.match(/Serien består af ti selvstændige film[^.]*\(7\+\)\./);
-                    // Match character religion - Danish pattern (handles both "er" and "tror på")
-                    const s3Match = fullText.match(/(?:^|\s)([\wæøåÆØÅ\s-]+(?:er |tror på |har tro på )[^.]+\.)\s*$/);
+                    // Match character religion - Danish pattern (handles both "er" and "tror på", period optional)
+                    const s3Match = fullText.match(/(?:^|\s)([\wæøåÆØÅ\s-]+(?:er |tror på |har tro på )[^.]+\.?)\s*$/);
 
                     sentence1 = s1Match ? s1Match[0].trim().replace(/\.$/, '') : '';
                     sentence2 = s2Match ? s2Match[0].trim().replace(/\.$/, '') : '';
@@ -388,8 +388,8 @@
                     // English patterns
                     const s1Match = fullText.match(/The film is part of the anthology series MY FAITH[^.]*challenges\./);
                     const s2Match = fullText.match(/The series consists of ten independent films[^.]*\(7\+\)\./);
-                    // Match character religion - English pattern
-                    const s3Match = fullText.match(/(?:^|\s)([\w\s]+(?:is a|has faith in)[^.]+\.)\s*$/);
+                    // Match character religion - English pattern (period optional)
+                    const s3Match = fullText.match(/(?:^|\s)([\w\s]+(?:is a|has faith in)[^.]+\.?)\s*$/);
 
                     sentence1 = s1Match ? s1Match[0].trim().replace(/\.$/, '') : '';
                     sentence2 = s2Match ? s2Match[0].trim().replace(/\.$/, '') : '';
