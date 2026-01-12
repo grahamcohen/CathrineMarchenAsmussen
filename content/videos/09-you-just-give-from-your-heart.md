@@ -1,7 +1,7 @@
 ---
 title: "YOU JUST GIVE FROM YOUR HEART"
 title_da: "MAN GIVER BARE FRA SIT HJERTE"
-year: 2024
+year: 2023
 duration: "14 min"
 vimeo_url: "https://vimeo.com/1147617209"
 thumbnail: "assets/images/YouJustGiveFromYourHeart.png"
