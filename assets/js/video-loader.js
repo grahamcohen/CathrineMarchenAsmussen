@@ -356,11 +356,11 @@
                     line.includes('is a Danish Protestant Church Christian') ||
                     line.includes('has faith in Science') || line.includes('is a Jew') ||
                     line.includes('is a Sufi Muslim') ||
-                    // Danish patterns
+                    // Danish patterns - match actual file content
                     lower.includes('er buddhist') || lower.includes('er jehovas vidne') ||
                     lower.includes('er pinsekirke') || lower.includes('er heks') ||
-                    lower.includes('er hinduist') || lower.includes('er sikh') ||
-                    lower.includes('er folkekirke') || lower.includes('har tro på videnskab') ||
+                    lower.includes('er hindu') || lower.includes('er sikh') ||
+                    lower.includes('er folkekirke') || lower.includes('tror på naturvidenskab') ||
                     lower.includes('er jøde') || lower.includes('er sufi-muslim')
                 );
             });
@@ -378,8 +378,8 @@
                     // Danish patterns
                     const s1Match = fullText.match(/Filmen indgår i antologiserien MIN TRO[^.]*udfordringer\./);
                     const s2Match = fullText.match(/Serien består af ti selvstændige film[^.]*\(7\+\)\./);
-                    // Match character religion - Danish pattern
-                    const s3Match = fullText.match(/(?:^|\s)([\wæøåÆØÅ\s-]+(?:er |har tro på )[^.]+\.)\s*$/);
+                    // Match character religion - Danish pattern (handles both "er" and "tror på")
+                    const s3Match = fullText.match(/(?:^|\s)([\wæøåÆØÅ\s-]+(?:er |tror på |har tro på )[^.]+\.)\s*$/);
 
                     sentence1 = s1Match ? s1Match[0].trim().replace(/\.$/, '') : '';
                     sentence2 = s2Match ? s2Match[0].trim().replace(/\.$/, '') : '';
@@ -433,11 +433,11 @@
                 trimmed.includes('is a Danish Protestant Church Christian') ||
                 trimmed.includes('has faith in Science') || trimmed.includes('is a Jew') ||
                 trimmed.includes('is a Sufi Muslim') ||
-                // Danish patterns
+                // Danish patterns - match actual file content
                 lower.includes('er buddhist') || lower.includes('er jehovas vidne') ||
                 lower.includes('er pinsekirke') || lower.includes('er heks') ||
-                lower.includes('er hinduist') || lower.includes('er sikh') ||
-                lower.includes('er folkekirke') || lower.includes('har tro på videnskab') ||
+                lower.includes('er hindu') || lower.includes('er sikh') ||
+                lower.includes('er folkekirke') || lower.includes('tror på naturvidenskab') ||
                 lower.includes('er jøde') || lower.includes('er sufi-muslim')) {
                 return false;
             }
