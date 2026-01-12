@@ -22,11 +22,14 @@
     function updateLanguageUI() {
         const currentLang = getCurrentLanguage();
 
-        // Update language switcher to show only the alternate language
+        // Update language switcher to show both languages with current one highlighted
         const languageSwitcher = document.querySelector('.language-switcher');
         if (languageSwitcher) {
-            const alternateLang = currentLang === 'en' ? 'DA' : 'EN';
-            languageSwitcher.innerHTML = `<a href="#" class="lang-switch-link">${alternateLang}</a>`;
+            if (currentLang === 'en') {
+                languageSwitcher.innerHTML = `<span class="current-lang">EN</span> <span class="lang-divider">|</span> <a href="#" class="lang-link" data-lang="da">DA</a>`;
+            } else {
+                languageSwitcher.innerHTML = `<a href="#" class="lang-link" data-lang="en">EN</a> <span class="lang-divider">|</span> <span class="current-lang">DA</span>`;
+            }
         }
 
         // Update navigation text
@@ -63,14 +66,14 @@
 
     // Initialize language switcher
     function init() {
-        const currentLang = getCurrentLanguage();
-
         // Set up click handler for language switching
         document.addEventListener('click', function(e) {
-            if (e.target.classList.contains('lang-switch-link')) {
+            if (e.target.classList.contains('lang-link')) {
                 e.preventDefault();
-                const newLang = currentLang === 'en' ? 'da' : 'en';
-                setLanguage(newLang);
+                const newLang = e.target.getAttribute('data-lang');
+                if (newLang) {
+                    setLanguage(newLang);
+                }
             }
         });
 

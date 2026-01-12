@@ -23,6 +23,7 @@
         let currentKey = null;
         let currentValue = '';
         let isMultiline = false;
+        let currentArray = null;
 
         yaml.split('\n').forEach(line => {
             if (line.match(/^(\w+):\s*\|/)) {
@@ -30,25 +31,57 @@
                 if (isMultiline && currentKey) {
                     data[currentKey] = currentValue;
                 }
+                // Save previous array if exists
+                if (currentArray) {
+                    data[currentKey] = currentArray;
+                    currentArray = null;
+                }
                 // Start of new multiline field
                 const key = line.match(/^(\w+):/)[1];
                 currentKey = key;
                 currentValue = '';
                 isMultiline = true;
-            } else if (line.match(/^(\w+):\s*"(.*)"/)) {
-                // Save previous multiline field if exists
+            } else if (line.match(/^(\w+):\s*$/)) {
+                // Save previous fields
                 if (isMultiline && currentKey) {
                     data[currentKey] = currentValue;
                     isMultiline = false;
+                }
+                if (currentArray) {
+                    data[currentKey] = currentArray;
+                }
+                // Start of array
+                const key = line.match(/^(\w+):/)[1];
+                currentKey = key;
+                currentArray = [];
+            } else if (line.match(/^  - "(.*)"/)) {
+                // Array item
+                const itemMatch = line.match(/^  - "(.*)"/);
+                if (currentArray) {
+                    currentArray.push(itemMatch[1]);
+                }
+            } else if (line.match(/^(\w+):\s*"(.*)"/)) {
+                // Save previous fields
+                if (isMultiline && currentKey) {
+                    data[currentKey] = currentValue;
+                    isMultiline = false;
+                }
+                if (currentArray) {
+                    data[currentKey] = currentArray;
+                    currentArray = null;
                 }
                 // Simple quoted string
                 const match = line.match(/^(\w+):\s*"(.*)"/);
                 data[match[1]] = match[2];
             } else if (line.match(/^(\w+):\s*(.*)/)) {
-                // Save previous multiline field if exists
+                // Save previous fields
                 if (isMultiline && currentKey) {
                     data[currentKey] = currentValue;
                     isMultiline = false;
+                }
+                if (currentArray) {
+                    data[currentKey] = currentArray;
+                    currentArray = null;
                 }
                 // Simple unquoted value
                 const match = line.match(/^(\w+):\s*(.*)/);
@@ -66,9 +99,12 @@
             }
         });
 
-        // Save last multiline field if any
+        // Save last field
         if (isMultiline && currentKey) {
             data[currentKey] = currentValue;
+        }
+        if (currentArray) {
+            data[currentKey] = currentArray;
         }
 
         return data;
@@ -86,6 +122,7 @@
             if (currentLang === 'da') {
                 if (data.profession_da) data.profession = data.profession_da;
                 if (data.bio_da) data.bio = data.bio_da;
+                if (data.acknowledgements_da) data.acknowledgements = data.acknowledgements_da;
             }
 
             updateAboutPage(data, currentLang);
@@ -115,10 +152,18 @@
             }).filter(p => p).join('');
         }
 
+        // Update acknowledgements
+        const acknowledgementsEl = document.querySelector('.about-acknowledgements ul');
+        if (acknowledgementsEl && data.acknowledgements && Array.isArray(data.acknowledgements)) {
+            acknowledgementsEl.innerHTML = data.acknowledgements.map(ack =>
+                `<li>${ack}</li>`
+            ).join('');
+        }
+
         // Update section headings
-        const acknowledgements = {
+        const acknowledgementsHeading = {
             en: 'Acknowledgements',
-            da: 'Anerkendelser'
+            da: 'Udmærkelser'
         };
         const moreInfo = {
             en: 'More Information',
@@ -127,7 +172,7 @@
 
         const acknowledgementHeading = document.querySelector('.about-acknowledgements h3');
         if (acknowledgementHeading) {
-            acknowledgementHeading.textContent = acknowledgements[lang];
+            acknowledgementHeading.textContent = acknowledgementsHeading[lang];
         }
 
         const linksHeading = document.querySelector('.about-links h3');
