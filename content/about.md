@@ -23,6 +23,15 @@ bio_da: |
   Den røde tråd i mit arbejde er at udfordre stereotyper
   Der findes mange sandheder
 acknowledgements:
+  - "3. Prize Balticum film og TV Festival 1995"
+  - "Grand Prix Odense Filmfestival 1999"
+  - "Best film for kids DKs TV-festival 2000"
+  - "Idfa nominated 2005"
+  - "Robert nominated 2006"
+  - "GoldenDok nominated 2007"
+  - "Robert nominated 2014"
+  - "Idfa nominated 2019"
+acknowledgements_da:
   - "3. Pris ved Baltikum film og TV Festival 1995"
   - "Grand Prix Odense Filmfestival 1999"
   - "Best film for kids DKs TV-festival 2000"
