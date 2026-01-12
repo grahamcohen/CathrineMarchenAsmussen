@@ -6,10 +6,10 @@ profession: "Documentary Film Director"
 profession_da: "Dokumentarfilminstruktør"
 bio: |
   I have directed and filmed short films for 30 years, aiming for depth and poetry
-  I treasure the precision of the short format
+  I love the precision of the short format
 
-  In creation, I listen on several levels to understand a person and their core narrative, so I can portray them sharply and soberly
-  It is important for me to frame cleanly - the main characters must feel seen and recognized
+  In creation, I listen on several levels to understand a person and their narrative
+  It is important for me to frame cleanly
 
   The common thread in my work is challenging stereotypes
   There are many truths
