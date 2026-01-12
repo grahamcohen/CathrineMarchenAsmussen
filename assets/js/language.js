@@ -22,13 +22,13 @@
     function updateLanguageUI() {
         const currentLang = getCurrentLanguage();
 
-        // Update language switcher to show both languages with current one highlighted
+        // Update language switcher to show both languages with current one highlighted (DA first)
         const languageSwitcher = document.querySelector('.language-switcher');
         if (languageSwitcher) {
             if (currentLang === 'en') {
-                languageSwitcher.innerHTML = `<span class="current-lang">EN</span> <span class="lang-divider">|</span> <a href="#" class="lang-link" data-lang="da">DA</a>`;
+                languageSwitcher.innerHTML = `<a href="#" class="lang-link" data-lang="da">DA</a> <span class="lang-divider">|</span> <span class="current-lang">EN</span>`;
             } else {
-                languageSwitcher.innerHTML = `<a href="#" class="lang-link" data-lang="en">EN</a> <span class="lang-divider">|</span> <span class="current-lang">DA</span>`;
+                languageSwitcher.innerHTML = `<span class="current-lang">DA</span> <span class="lang-divider">|</span> <a href="#" class="lang-link" data-lang="en">EN</a>`;
             }
         }
 
