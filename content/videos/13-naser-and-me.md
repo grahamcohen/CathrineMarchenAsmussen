@@ -11,7 +11,7 @@ order: 13
 awards: "Nominated Best Short Dok, GoldenDok"
 awards_da: "Nomineret Bedste Korte Dok, GuldDok"
 description: |
-  In the wake of the Mohammed crisis, the union Democratic Muslims is formed by Amina's hero, the politician Naser Khader.
+  In the wake of the Mohammed crisis, the union Democratic Muslims is formed by Amina's hero the politician Naser Khader.
 
   Amina joins in, which isn't well regarded in her neighborhood.
 
