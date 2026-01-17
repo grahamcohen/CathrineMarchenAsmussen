@@ -9,9 +9,7 @@ order: 11
 awards: "Nominated Robert"
 awards_da: "Nomineret RoberT"
 description: |
-  **EKKO FILM MAGAZINE EXCERPT**
-
-  A poignant story about a group of vulnerable boys who meet at Save the Children's summer camp. They are challenged to find resources within themselves that neither they nor others dreamed they had. (5 stars)
+  “A poignant story about vulnerable boys who meet at Save the Children's summer camp. They are challenged to find resources within themselves that neither they nor others thought possible.”  (5 stars in Filmmagazine Ekko)
 description_da: |
   **UDDRAG FILMMAGASINET EKKO**
 
