@@ -7,9 +7,7 @@ vimeo_url: "https://vimeo.com/1147389645"
 thumbnail: "assets/images/HuntingTheOnlyOne.png"
 order: 12
 description: |
-  **FILMSTRIBEN QUOTE**
-
-  "A subtle, understated documentary that evokes deadpan comedy memories reminiscent of Jim Jarmusch and Aki Kaurismäki"
+  “…. A subtle, understated documentary evoking Max Kestner's 'Nede på Jorden, infused with deadpan comedy reminiscent of Jim Jarmusch and Aki Kaurismäki." (Filmstriben)
 description_da: |
   **FILMSTRIBEN OM FILMEN**
 
