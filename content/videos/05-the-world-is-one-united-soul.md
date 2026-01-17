@@ -10,11 +10,7 @@ faith: "Hindu"
 faith_da: "Hinduist"
 order: 5
 description: |
-  **Short film about the path to peace**
-
-  Anvita wants to become Prime Minister to bring peace to the world
-
-  She reaches out to the local monk in Vanløse for help
+  Anvita practices yoga every morning. For if we lack inner peace, we wage war on each other. She wants to become prime minister to create more peace in the world. The local monk in Vanløse takes on the project and trains her to become a loving leader.
 
   The film is part of the anthology series MY FAITH, in which children of different faiths face recognizable challenges. The series consists of ten independent films for all ages (7+). Anvita is a Hindu.
 description_da: |
