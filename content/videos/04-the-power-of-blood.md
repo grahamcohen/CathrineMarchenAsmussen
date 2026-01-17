@@ -10,9 +10,7 @@ faith: "Witch"
 faith_da: "Heks"
 order: 4
 description: |
-  **Short film about honoring**
-
-  Mira's farewell to childhood
+  Mira both fears and looks forward to menstruation's arrival. As terrifying as it is to become an adult and bidding childhood farewell, it is equally profound to receive the ability to give life.
 
   The film is part of the anthology series MY FAITH, in which children of different faiths face recognizable challenges. The series consists of ten independent films for all ages (7+). Mira is a Witch.
 description_da: |
