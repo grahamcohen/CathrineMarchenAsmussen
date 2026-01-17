@@ -10,11 +10,7 @@ faith: "Danish protestant church"
 faith_da: "Folkekirken"
 order: 7
 description: |
-  **Short film about longing**
-
-  Signe misses her dad
-
-  He is a sailor and wont be home for Christmas
+  Signe lives on an island and fears the sea. Her father is a sailor, away a month at a time. This year, he's not home for Christmas. She's scared during thunderstorms—what if the ship capsizes?
 
   The film is part of the anthology series MY FAITH, in which children of different faiths face recognizable challenges. The series consists of ten independent films for all ages (7+). Signe is a Danish Protestant Church Christian.
 description_da: |
