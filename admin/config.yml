@@ -84,7 +84,7 @@ collections:
 
   # Filmography
   - name: "filmography"
-    label: "Filmography"
+    label: "Documentary"
     files:
       - label: "Films"
         name: "films"
