@@ -10,10 +10,11 @@ faith: "Sikh"
 faith_da: "Sikh"
 order: 6
 description: |
-  Deenpal wants to be the best football goalkeeper in the world, but he is afraid of the physical hurt involved.
-A film about overcoming fear.	
+  **Short film about taming fear**
 
-  The film is part of the anthology series MY FAITH, in which children of different faiths face recognizable challenges. The series consists of ten independent films for all ages (7+).
+  Deenpal wants to be the best football goalkeeper in the world, but he is afraid of the physical hurt involved
+
+  The film is part of the anthology series MY FAITH, in which children of different faiths face recognizable challenges. The series consists of ten independent films for all ages (7+). Deenpal is a Sikh.
 description_da: |
   **Kortfilm om at tæmme frygt**
 
