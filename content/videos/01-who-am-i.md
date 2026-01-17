@@ -10,9 +10,9 @@ faith: "Sufi Muslim"
 faith_da: "Sufi-muslim"
 order: 1
 description: |
-  **Short film about existence**
+  It's about doing good things, but being a bandit is pretty tempting too.
+  Asmir tries to understand who he really is deep down.
 
-  Asmir delves into Socratic questions, when not busy acting a bully
 
   The film is part of the anthology series MY FAITH, in which children of different faiths face recognizable challenges. The series consists of ten independent films for all ages (7+). Asmir is a Sufi Muslim.
 description_da: |
