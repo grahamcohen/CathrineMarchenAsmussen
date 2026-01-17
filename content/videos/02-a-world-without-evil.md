@@ -14,7 +14,7 @@ order: 2
 description: |
   **Short film about death**
 
-  Nathalie paints the paradise awaiting her
+  Nathalie dreams of the paradise awaiting when the earth perishes.
 
   The film is part of the anthology series MY FAITH, in which children of different faiths face recognizable challenges. The series consists of ten independent films for all ages (7+). Nathalie is a Jehovah Witness.
 description_da: |
