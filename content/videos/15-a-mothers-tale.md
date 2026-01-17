@@ -7,9 +7,8 @@ vimeo_url: "https://vimeo.com/1147382291"
 thumbnail: "assets/images/AMothersTale.png"
 order: 15
 description: |
-  The gap between a Turkish village and Denmark
-
-  A story about the cost of putting children first
+  There is an age apart between life in a Turkish village and Denmark.
+  A story about the cost of putting children first.
 description_da: |
   Afstanden mellem en tyrkisk landsby og Danmark
 
