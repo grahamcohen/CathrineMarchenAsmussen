@@ -2,15 +2,17 @@
 title: "Portrait"
 title_da: "Portræt"
 intro: |
-  I wish I had come up with that idea while my beloved grandparents were still alive.
+  What is the essence of a human being?
+  Back in the old days, you would go to a painter.
+  I immortalize people through portrait films.
 intro_da: |
   Gid jeg havde fået den idè, mens mine elskede bedsteforældre var i live
 featured_portrait:
-  title: "PORTRAIT EVA SMITH"
-  title_da: "PORTRÆT AF EVA SMITH"
+  title: ""
+  title_da: ""
   subtitle: "My mother"
   subtitle_da: "Min mor"
-  year: 2025
+  year: Eva smith 2025
   duration: "10 min, 18 sec"
   vimeoId: "1147618403"
   description: ""
