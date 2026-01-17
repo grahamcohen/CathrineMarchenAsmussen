@@ -10,13 +10,9 @@ faith_da: "Buddhist"
 faith_icon: "assets/images/Buddhist.png"
 order: 9
 description: |
-  **Short film about giving and receiving**
+  Htet Linn gives Buddha love every day. He knows that he gets love back — and right now, he wishes for it to return in the form of a dog. His mother borrows a chihuahua for him to try caring for. Can he handle the responsibility of a living being?
 
-  Htet Linn wants a dog
-
-  If he gives, he receives
-
-  The film is part of the anthology series MY FAITH, in which children of different faiths face recognizable challenges. The series consists of ten independent films for all ages (7+). Htet Linn is a Buddhist.
+  The film is part of the anthology series MY FAITH, in which children of different faiths face recognizable challenges. The series consists of ten independent films for all ages (7+).
 description_da: |
   **Kortfilm om at give og modtage**
 
