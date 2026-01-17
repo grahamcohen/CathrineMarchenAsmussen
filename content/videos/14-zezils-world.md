@@ -13,9 +13,7 @@ awards_da: |
   Nomineret IDFA
   Nomineret Robert
 description: |
-  Cecilie aka Zezil
-
-  One of the few ethnic Danish students in a primary school in Nørrebro, Cph
+  Cecilie, aka Zezil, is one of the few ethnic Danish students in a primary school in Nørrebro, torn between two cultures.
 description_da: |
   Cecilie aka Zezil
 
