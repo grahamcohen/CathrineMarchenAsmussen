@@ -10,11 +10,7 @@ faith: "Science"
 faith_da: "Naturvidenskab"
 order: 8
 description: |
-  **Short film exploring life's emergence**
-
-  Elliot is fascinated by the fact that all life consists of stardust
-
-  He pursues the dream of recreating dinosaurs with his friend Liam
+  Elliot and his best friend Liam excel in nature and technology. They dream of recreating dinosaurs and contact DNA researcher Eske Willerslev in hopes that he can help bring their dream closer.
 
   The film is part of the anthology series MY FAITH, in which children of different faiths face recognizable challenges. The series consists of ten independent films for all ages (7+). Elliot has faith in Science.
 description_da: |
