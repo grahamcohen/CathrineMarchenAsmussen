@@ -13,9 +13,7 @@ awards_da: |
   Grand Prix Odense Filmfestival 1999
   Bedste børnefilm DKs TV-festival 2000
 description: |
-  **JURY'S STATEMENT**
-
-  "A story of great beauty that breaks down prejudices and creates faith in the future"
+  "A story of great beauty that breaks down prejudices and creates faith in the future.”  (Jurys statement)
 description_da: |
   **JURYENS BEGRUNDELSE**
 
