@@ -10,9 +10,9 @@ faith: "The Pentecostal Church"
 faith_da: "Pinsebevægelsen"
 order: 3
 description: |
-  **Short film about setting the bar high**
+  Lukas believes in miracles—and he needs one. His faulty heart valve doesn't close properly, which means he lacks energy.
 
-  – despite one of Lukas's heart valves failing to close properly
+  He dreams of running freely and prays every day for his heart to be healed.
 
   The film is part of the anthology series MY FAITH, in which children of different faiths face recognizable challenges. The series consists of ten independent films for all ages (7+). Lukas is a Pentecostal Christian.
 description_da: |
