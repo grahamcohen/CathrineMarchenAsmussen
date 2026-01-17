@@ -12,8 +12,6 @@ faith: "Jehovah's Witnesses"
 faith_da: "Jehovas vidner"
 order: 2
 description: |
-  **Short film about death**
-
   Nathalie dreams of the paradise awaiting when the earth perishes.
 
   The film is part of the anthology series MY FAITH, in which children of different faiths face recognizable challenges. The series consists of ten independent films for all ages (7+). Nathalie is a Jehovah Witness.
