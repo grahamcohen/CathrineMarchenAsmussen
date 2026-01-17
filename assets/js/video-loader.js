@@ -398,7 +398,7 @@
 
                 seriesInfo = `
                     <div class="series-info">
-                        <img src="assets/images/MinTro.png" alt="MY FAITH series" class="series-logo">
+                        <!--<img src="assets/images/MinTro.png" alt="MY FAITH series" class="series-logo">-->
                         <div class="series-text">
                             ${sentence1 ? `<p>${convertMarkdown(sentence1)}</p>` : ''}
                             ${sentence2 ? `<p>${convertMarkdown(sentence2)}</p>` : ''}
