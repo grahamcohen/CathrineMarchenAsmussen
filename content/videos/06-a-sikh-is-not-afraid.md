@@ -15,9 +15,8 @@ description: |
 
   The film is part of the anthology series MY FAITH, in which children of different faiths face recognizable challenges. The series consists of ten independent films for all ages (7+).
 description_da: |
-  **Kortfilm om at tæmme frygt**
-
-  Deenpal vil gerne være den bedste fodboldmålmand i verden, men er bange for at kaste sig efter bolden
+  Deenpal vil gerne være den bedste fodboldmålmand i verden, men er bange for at kaste sig efter bolden.
+  En film om at overvinde sin frygt.
 
   Filmen indgår i antologiserien MIN TRO, hvor børn med forskellige overbevisninger møder genkendelige udfordringer. Serien består af ti selvstændige film til alle aldre (7+). Deenpal er sikh
 filmstriben:
