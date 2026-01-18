@@ -35,12 +35,12 @@
         // Update navigation text
         const navTexts = {
             en: {
-                filmography: 'Filmography',
+                filmography: 'Documentary',
                 portrait: 'Portrait',
                 about: 'About'
             },
             da: {
-                filmography: 'Filmografi',
+                filmography: 'Dokumentar',
                 portrait: 'Portræt',
                 about: 'Om'
             }
