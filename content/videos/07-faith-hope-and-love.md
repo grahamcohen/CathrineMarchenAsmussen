@@ -14,7 +14,6 @@ description: |
 
   The film is part of the anthology series MY FAITH, in which children of different faiths face recognizable challenges. The series consists of ten independent films for all ages (7+). Signe is a Danish Protestant Church Christian.
 description_da: |
-  
   Signe bor på en ø og er bange for havet. Hendes far er sømand og væk en måned af gangen. I år er han ikke hjemme til jul.
   Hun er bange, når det lyner og tordner – hvad hvis skibet kæntrer?
 
