@@ -15,9 +15,8 @@ awards_da: |
 description: |
   Cecilie, aka Zezil, is one of the few ethnic Danish students in a primary school in Nørrebro, torn between two cultures.
 description_da: |
-  Cecilie aka Zezil
-
-  En af de få etniske danske elever i en folkeskole på Nørrebro
+  Cecilie, aka Zezil, er af de få etniske danske elever i en folkeskole på Nørrebro, splittet mellem to kulturer. 
+  
 filmstriben:
   - "https://biblioteket.filmstriben.dk/film/2584867502/zezil-s-verden"
 ---
