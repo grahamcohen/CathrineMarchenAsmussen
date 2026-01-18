@@ -9,8 +9,7 @@ order: 12
 description: |
   “…. A subtle, understated documentary evoking Max Kestner's 'Nede på Jorden, infused with deadpan comedy reminiscent of Jim Jarmusch and Aki Kaurismäki." (Filmstriben)
 description_da: |
-  “ …. En underfundigt, underspillet dokumentarfilm , der vækker mindelser til Max Kestners “nede på Jorden” og deadpan-komik 
-som hos Jim Jarmusch og Aki Kaurismäki.” (Filmstriben)
+  “ …. En underfundigt, underspillet dokumentarfilm , der vækker mindelser til Max Kestners “nede på Jorden” og deadpan-komik som hos Jim Jarmusch og Aki Kaurismäki.” (Filmstriben)
 
 filmstriben:
   - "https://fjernleje.filmstriben.dk/film/9000000213/jagten-pa-den-eneste-ene"
