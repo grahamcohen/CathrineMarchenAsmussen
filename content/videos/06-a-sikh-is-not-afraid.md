@@ -18,7 +18,7 @@ description_da: |
   Deenpal vil gerne være den bedste fodboldmålmand i verden, men er bange for at kaste sig efter bolden.
   En film om at overvinde sin frygt.
 
-  Filmen indgår i antologiserien MIN TRO, hvor børn med forskellige overbevisninger møder genkendelige udfordringer. Serien består af ti selvstændige film til alle aldre (7+). Deenpal er sikh
+  Filmen indgår i antologiserien MIN TRO, hvor børn med forskellige overbevisninger møder genkendelige udfordringer. Serien består af ti selvstændige film til alle aldre (7+).
 filmstriben:
   - "https://biblioteket.filmstriben.dk/film/9372629189/min-tro---en-sikh-er-er-ikke-bange"
   - "https://fjernleje.filmstriben.dk/film/9000005689/min-tro-3-afsnit-en-sikh-er-er-ikke-bange-en-verden-uden-ondt-blodets-kraft"
