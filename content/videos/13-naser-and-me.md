@@ -14,11 +14,9 @@ description: |
   In the wake of the Mohammed crisis, the union Democratic Muslims is formed by Amina's hero, the politician Naser Khader.
   Amina joins in, which isn’t well regarded in her neighborhood. Her neighbors know Naser as a traitor.
 description_da: |
-  I kølvandet på Muhammedkrisen dannes foreningen Demokratiske Muslimer af Aminas helt, politikeren Naser Khader.
+  I kølvandet på Muhammedkrisen dannes foreningen Demokratiske Muslimer af Aminas helt, politikeren Naser Khader. 
+  Amina melder sig ind, hvilket hendes naboer ikke ser på med milde øjne. De kender Naser som en forræder.
 
-  Amina melder sig ind, hvilket hendes naboer ikke ser på med milde øjne.
-
-  De kender Naser som en forræder.
 filmstriben:
   - "https://biblioteket.filmstriben.dk/film/9000000036/mig-naser-hvor-svaert-kan-det-vaere"
 ---
