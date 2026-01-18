@@ -8,16 +8,10 @@ bio: |
   I have directed and filmed short films for 30 years, aiming for depth and poetry. 
   I love the short format. Precision. Minimalism. Essence. 
 bio_da: |
-  Jeg har instrueret og filmet kortfilm i 30 år og sigter efter dybde og poesi
-  Jeg elsker det korte formats præcision
-
-  I skabelsen lytter jeg på flere niveauer for at forstå et menneske og dets kernefortælling, så jeg kan portrættere skarpt og nøgternt
-  Det er vigtigt for mig at ramme rent - hovedpersonen skal føle sig set og genkendt
-
-  Den røde tråd i mit arbejde er at udfordre stereotyper
-  Der findes mange sandheder
+  Jeg har instrueret og filmet kortfilm i 30 år og sigter efter dybde og poesi.
+  Jeg elsker det korte format. Præcision. Minimalisme. Essens.
 acknowledgements:
-  - "Idfa nominated 2019"
+  - "IDFA nominated 2019"
   - "Robert nominated 2014"
   - "GoldenDok nominated 2007"
   - "Robert nominated 2006"
@@ -27,7 +21,7 @@ acknowledgements:
   - "3. Prize Balticum film og TV Festival 1995"
   
 acknowledgements_da:
-  - "Idfa nomineret 2019"
+  - "IDFA nomineret 2019"
   - "Robert nomineret 2014"
   - "Gulddok nomineret 2007"
   - "Robert nomineret 2006"
