@@ -485,7 +485,7 @@
             ${filmstribenHTML}
 
             <div class="film-navigation">
-                <a href="filmography.html" class="btn btn-primary">← ${currentLang === 'da' ? 'Tilbage til Filmografi' : 'Back to Filmography'}</a>
+                <a href="filmography.html" class="btn btn-primary">← ${currentLang === 'da' ? 'Tilbage til Dokumentar' : 'Back to Documentary'}</a>
             </div>
         `;
 
