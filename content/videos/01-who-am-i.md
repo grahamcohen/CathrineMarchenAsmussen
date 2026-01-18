@@ -16,6 +16,7 @@ description: |
 
   The film is part of the anthology series MY FAITH, in which children of different faiths face recognizable challenges. The series consists of ten independent films for all ages (7+). Asmir is a Sufi Muslim.
 description_da: |
+  
   Det gælder om at gøre gode ting, men det er også ret fristende at være en bandit.
   Asmir forsøger at forstå, hvem han er inderst inde.   
 
