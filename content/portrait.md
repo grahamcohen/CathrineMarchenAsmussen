@@ -17,7 +17,7 @@ featured_portrait:
     Back in the old days, you would go to a painter.
     I immortalize people through portrait films.
   description_da: |
-    Jeg er optaget af at tegne skarpe portrætter i levende billeder og rund lyd
-    Ramme et liv ind på ti minutter
-    Gid jeg havde fået den idè, mens mine elskede bedsteforældre var i live
+    Hvad er essensen af et menneske?
+    I gamle dage gik man til en kunstmaler.
+    Jeg foreviger mennesker gennem portrætfilm.  
 ---
