@@ -10,7 +10,7 @@ faith: "The Pentecostal Church"
 faith_da: "Pinsebevægelsen"
 order: 3
 description: |
-  Lukas believes in miracles—and he needs one. His faulty heart valve doesn't close properly, which means he lacks energy.
+  Lukas believes in miracles – and he needs one. His faulty heart valve doesn't close properly, which means he lacks energy.
 
   He dreams of running freely and prays every day for his heart to be healed.
 
