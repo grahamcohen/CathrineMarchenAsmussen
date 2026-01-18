@@ -14,6 +14,7 @@ description: |
 
   The film is part of the anthology series MY FAITH, in which children of different faiths face recognizable challenges. The series consists of ten independent films for all ages (7+). Anvita is a Hindu.
 description_da: |
+  
   Anvita dyrker yoga hver morgen. For hvis vi ikke har fred indeni, bekriger vi hinanden. Hun vil gerne være statsminister for at skabe mere fred i verden. Den lokale munk i Vanløse griber bolden og træner hende i at blive en kærlig leder.
 
   Filmen indgår i antologiserien MIN TRO, hvor børn med forskellige overbevisninger møder genkendelige udfordringer. Serien består af ti selvstændige film til alle aldre (7+). Anvita er hindu
