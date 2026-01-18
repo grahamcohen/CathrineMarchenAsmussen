@@ -16,9 +16,8 @@ description: |
 
   The film is part of the anthology series MY FAITH, in which children of different faiths face recognizable challenges. The series consists of ten independent films for all ages (7+). Asmir is a Sufi Muslim.
 description_da: |
-  **Kortfilm om eksistens**
-
-  Asmir dykker ned i sokratiske spørgsmål, når han ikke har travlt med at spille bølle
+  Det gælder om at gøre gode ting, men det er også ret fristende at være en bandit.
+  Asmir forsøger at forstå, hvem han er inderst inde.   
 
   Filmen indgår i antologiserien MIN TRO, hvor børn med forskellige overbevisninger møder genkendelige udfordringer. Serien består af ti selvstændige film til alle aldre (7+). Asmir er sufi-muslim.
 filmstriben:
