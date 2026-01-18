@@ -10,9 +10,9 @@ description: |
   There is an age apart between life in a Turkish village and Denmark.
   A story about the cost of putting children first.
 description_da: |
-  Afstanden mellem en tyrkisk landsby og Danmark
-
-  En fortælling om prisen for at sætte børnene først
+  Der er en tidsalder mellem livet i en tyrkisk landsby og Danmark.
+  En film om prisen for at sætte børnene først.
+  
 filmstriben:
   - "https://biblioteket.filmstriben.dk/film/9000000453/en-mors-historie"
 ---
