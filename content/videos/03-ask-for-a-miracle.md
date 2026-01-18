@@ -16,6 +16,7 @@ description: |
 
   The film is part of the anthology series MY FAITH, in which children of different faiths face recognizable challenges. The series consists of ten independent films for all ages (7+). Lukas is a Pentecostal Christian.
 description_da: |
+  
   Lukas tror på mirakler – og han har brug for et. Hans ene hjerteklap lukker ikke rigtigt, og det betyder, at han mangler energi. Han drømmer om at kunne løbe frit og beder hver dag for at hans hjerte heles.
 
 
