@@ -11,9 +11,7 @@ awards_da: "Nomineret RoberT"
 description: |
   “A poignant story about vulnerable boys who meet at Save the Children's summer camp. They are challenged to find resources within themselves that neither they nor others thought possible.”  (5 stars in Filmmagazine Ekko)
 description_da: |
-  **UDDRAG FILMMAGASINET EKKO**
-
-  En gribende fortælling om en håndfuld udsatte drenge, som mødes på Red Barnets sommerlejr. De udforders til at finde ressourcer i sig selv som hverken de selv eller andre drømte om, at de havde. (5 stjerner)
+  “En gribende fortælling om en håndfuld udsatte drenge, som mødes på Red Barnets sommerlejr. De udforders til at finde ressourcer i sig selv som hverken de selv eller andre drømte om, at de havde.”  (5 stjerner i filmmagasinet Ekko)
 filmstriben:
   - "https://fjernleje.filmstriben.dk/film/9000000917/drengelejren"
 ---
