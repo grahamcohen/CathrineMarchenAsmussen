@@ -6,9 +6,9 @@
 (function() {
     'use strict';
 
-    // Get current language from localStorage or default to 'en'
+    // Get current language from localStorage or default to 'da'
     function getCurrentLanguage() {
-        return localStorage.getItem('site-language') || 'en';
+        return localStorage.getItem('site-language') || 'da';
     }
 
     // Set language and reload page
