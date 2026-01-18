@@ -15,9 +15,8 @@ awards_da: |
 description: |
   "A story of great beauty that breaks down prejudices and creates faith in the future.”  (Jurys statement)
 description_da: |
-  **JURYENS BEGRUNDELSE**
-
-  "En historie af stor skønhed, der bryder fordomme ned og skaber tro på fremtiden"
+  "En fortælling af stor skønhed, som nedbryder fordomme og skaber tro på fremtiden.” (Juryens begrundelse)
+  
 filmstriben:
   - "https://biblioteket.filmstriben.dk/film/2656038101/ghettoprinsesse"
 ---
