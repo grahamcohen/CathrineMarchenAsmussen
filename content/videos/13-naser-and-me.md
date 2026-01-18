@@ -1,8 +1,8 @@
 ---
 title: "NASER & ME"
-title_da: "mig & naser"
+title_da: "MIG & NASER"
 subtitle: "HOW HARD CAN IT BE?"
-subtitle_da: "Hvor svært kan det være?"
+subtitle_da: "HVOR SVÆRT KAN DET VÆRE?"
 year: 2007
 duration: "48 min"
 vimeo_url: "https://vimeo.com/1147386501"
