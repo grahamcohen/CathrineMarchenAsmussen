@@ -1,6 +1,6 @@
 ---
 title: "ZEZIL'S WORLD"
-title_da: "ZeZils Verden"
+title_da: "ZEZILS VERDEN"
 year: 2005
 duration: "33 min"
 vimeo_url: "https://vimeo.com/1147383853"
