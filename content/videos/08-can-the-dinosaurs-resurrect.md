@@ -14,6 +14,7 @@ description: |
 
   The film is part of the anthology series MY FAITH, in which children of different faiths face recognizable challenges. The series consists of ten independent films for all ages (7+). Elliot has faith in Science.
 description_da: |
+
   Elliot og hans bedste ven Liam er suveræne til natur og teknik. De drømmer om at genskabe dinosaurer og kontakter DNA-forsker 
   Eske Willerslev i håb om, at han kan hjælpe dem med at komme drømmen nærmere.
 
