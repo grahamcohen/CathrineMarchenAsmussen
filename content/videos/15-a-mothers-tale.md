@@ -7,10 +7,10 @@ vimeo_url: "https://vimeo.com/1147382291"
 thumbnail: "assets/images/AMothersTale.png"
 order: 15
 description: |
-  There is an age apart between life in a Turkish village and in Denmark.
+  There is a world of difference between life in a Turkish village and in Denmark.
   A story about the cost of putting children first.
 description_da: |
-  Der er en tidsalder mellem livet i en tyrkisk landsby og i Danmark.
+  Der er en verden til forskel mellem livet i en tyrkisk landsby og i Danmark.
   En film om prisen for at sætte børnene først.
   
 filmstriben:
