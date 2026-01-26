@@ -22,6 +22,6 @@ description_da: |
 
   Filmen indgår i antologiserien MIN TRO, hvor børn med forskellige overbevisninger møder genkendelige udfordringer. Serien består af ti selvstændige film til alle aldre (7+). Asmir er sufi-muslim.
 filmstriben:
-  - "https://biblioteket.filmstriben.dk/film/9372628239/min-tro---hvem-er-jeg---islam"
-  - "https://fjernleje.filmstriben.dk/film/9000005687/min-tro-3-afsnit-den-jodiske-violin-be-om-et-mirakel-hvem-er-jeg"
+  - https://biblioteket.filmstriben.dk/film/9372628239/min-tro---hvem-er-jeg---islam
+  - https://fjernleje.filmstriben.dk/film/9000005687/min-tro-3-afsnit-den-jodiske-violin-be-om-et-mirakel-hvem-er-jeg
 ---
