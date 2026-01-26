@@ -23,6 +23,6 @@ description_da: |
   Filmen indgår i antologiserien MIN TRO, hvor børn med forskellige overbevisninger møder genkendelige udfordringer. Serien består af ti selvstændige film til alle aldre (7+). Lukas er pinsekirke kristen.
   
 filmstriben:
-  - "https://biblioteket.filmstriben.dk/film/9372628237/min-tro---be-om-et-mirakel---kristendom"
-  - "https://fjernleje.filmstriben.dk/film/9000005687/min-tro-3-afsnit-den-jodiske-violin-be-om-et-mirakel-hvem-er-jeg"
+  - https://biblioteket.filmstriben.dk/film/9372628237/min-tro---be-om-et-mirakel---kristendom
+  - https://fjernleje.filmstriben.dk/film/9000005687/min-tro-3-afsnit-den-jodiske-violin-be-om-et-mirakel-hvem-er-jeg
 ---
