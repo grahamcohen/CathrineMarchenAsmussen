@@ -22,6 +22,6 @@ description_da: |
   Filmen indgår i antologiserien MIN TRO, hvor børn med forskellige overbevisninger møder genkendelige udfordringer. Serien består af ti selvstændige film til alle aldre (7+). Nathalie er Jehovas Vidne.
   
 filmstriben:
-  - "https://biblioteket.filmstriben.dk/film/9372628238/min-tro---verden-uden-ondt"
-  - "https://fjernleje.filmstriben.dk/film/9000005689/min-tro-3-afsnit-en-sikh-er-er-ikke-bange-en-verden-uden-ondt-blodets-kraft"
+  - https://biblioteket.filmstriben.dk/film/9372628238/min-tro---verden-uden-ondt
+  - https://fjernleje.filmstriben.dk/film/9000005689/min-tro-3-afsnit-en-sikh-er-er-ikke-bange-en-verden-uden-ondt-blodets-kraft
 ---
