@@ -63,11 +63,11 @@ content:
         description: Display order (1 = first)
       - name: description
         label: Description (English)
-        type: rich-text
+        type: text
         required: true
       - name: description_da
         label: Description (Danish)
-        type: rich-text
+        type: text
         required: true
       - name: filmstriben
         label: Filmstriben Links
