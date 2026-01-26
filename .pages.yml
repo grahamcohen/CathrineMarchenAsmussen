@@ -1,0 +1,190 @@
+# Pages CMS Configuration for Cathrine Marchen Asmussen Website
+
+media:
+  input: assets/images
+  output: /assets/images
+
+content:
+  # Videos Collection - Main filmography management
+  - name: videos
+    label: Videos
+    type: collection
+    path: content/videos
+    filename: '{order}-{slug}.md'
+    view:
+      fields: [title, year, duration]
+      sort: [order, year, title]
+      default:
+        sort: order
+        order: asc
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: year
+        label: Year
+        type: number
+        required: true
+      - name: duration
+        label: Duration
+        type: string
+        required: true
+        description: e.g., 14 min
+      - name: vimeo_url
+        label: Vimeo URL
+        type: string
+        required: true
+        description: Full Vimeo URL (e.g., https://vimeo.com/1147617209)
+      - name: thumbnail
+        label: Thumbnail Image
+        type: image
+        required: true
+      - name: faith
+        label: Faith/Category
+        type: string
+        required: false
+      - name: faith_icon
+        label: Faith Icon
+        type: image
+        required: false
+      - name: order
+        label: Display Order
+        type: number
+        required: true
+        description: Display order (1 = first)
+      - name: awards
+        label: Awards
+        type: string
+        required: false
+      - name: description
+        label: Description
+        type: text
+        required: true
+      - name: filmstriben
+        label: Filmstriben Links
+        type: string
+        list: true
+        required: false
+
+  # Filmography
+  - name: filmography
+    label: Documentary Films
+    type: file
+    path: content/filmography.md
+    fields:
+      - name: films
+        label: Films
+        type: object
+        list: true
+        fields:
+          - name: title
+            label: Title
+            type: string
+          - name: year
+            label: Year
+            type: number
+          - name: duration
+            label: Duration
+            type: string
+          - name: vimeoId
+            label: Vimeo ID
+            type: string
+            description: Just the ID number from the Vimeo URL (e.g., 1147617209)
+          - name: description
+            label: Description
+            type: rich-text
+          - name: awards
+            label: Awards
+            type: string
+            required: false
+          - name: filmstriben
+            label: Filmstriben Links
+            type: string
+            list: true
+            required: false
+
+  # Portrait
+  - name: portrait
+    label: Portrait
+    type: file
+    path: content/portrait.md
+    fields:
+      - name: title
+        label: Title
+        type: string
+      - name: intro
+        label: Introduction
+        type: rich-text
+      - name: featured_portrait
+        label: Featured Portrait
+        type: object
+        fields:
+          - name: title
+            label: Title
+            type: string
+          - name: year
+            label: Year
+            type: number
+          - name: duration
+            label: Duration
+            type: string
+          - name: vimeoId
+            label: Vimeo ID
+            type: string
+          - name: description
+            label: Description
+            type: string
+            required: false
+
+  # About
+  - name: about
+    label: About
+    type: file
+    path: content/about.md
+    fields:
+      - name: title
+        label: Title
+        type: string
+      - name: name
+        label: Name
+        type: string
+      - name: profession
+        label: Profession
+        type: string
+      - name: bio
+        label: Biography
+        type: rich-text
+      - name: acknowledgements
+        label: Acknowledgements
+        type: string
+        list: true
+      - name: links
+        label: Links
+        type: object
+        fields:
+          - name: imdb
+            label: IMDb URL
+            type: string
+          - name: dfi
+            label: Danish Film Institute URL
+            type: string
+
+  # Site Settings
+  - name: site_settings
+    label: Site Settings
+    type: file
+    path: content/site.md
+    fields:
+      - name: title
+        label: Site Title
+        type: string
+      - name: tagline
+        label: Tagline
+        type: string
+      - name: email
+        label: Email
+        type: string
+      - name: phone
+        label: Phone
+        type: string
