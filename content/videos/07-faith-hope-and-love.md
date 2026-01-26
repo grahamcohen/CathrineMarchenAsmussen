@@ -19,6 +19,6 @@ description_da: |
 
   Filmen indgår i antologiserien MIN TRO, hvor børn med forskellige overbevisninger møder genkendelige udfordringer. Serien består af ti selvstændige film til alle aldre (7+). Signe er folkekirke kristen
 filmstriben:
-  - "https://biblioteket.filmstriben.dk/film/9372630992/min-tro---kristendom---tro-hab-og-kaerlighed"
-  - "https://fjernleje.filmstriben.dk/film/9000006698/min-tro-2-afsnit-kristendom-tro-hab-og-kaerlighed-buddhisme-man-giver-bare-sit-hjerte"
+  - https://biblioteket.filmstriben.dk/film/9372630992/min-tro---kristendom---tro-hab-og-kaerlighed
+  - https://fjernleje.filmstriben.dk/film/9000006698/min-tro-2-afsnit-kristendom-tro-hab-og-kaerlighed-buddhisme-man-giver-bare-sit-hjerte
 ---
