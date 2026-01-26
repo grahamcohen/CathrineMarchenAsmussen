@@ -20,6 +20,6 @@ description_da: |
   Filmen indgår i antologiserien MIN TRO, hvor børn med forskellige overbevisninger møder genkendelige udfordringer. Serien består af ti selvstændige film til alle aldre (7+). Elliot tror på naturvidenskab.
   
 filmstriben:
-  - "https://biblioteket.filmstriben.dk/film/9372630289/min-tro---kan-dinosaurerne-genopsta"
-  - "https://fjernleje.filmstriben.dk/film/9000006697/min-tro-2-afsnit-verden-er-en-stor-sjael-kan-dinosaurerne-genopsta"
+  - https://biblioteket.filmstriben.dk/film/9372630289/min-tro---kan-dinosaurerne-genopsta
+  - https://fjernleje.filmstriben.dk/film/9000006697/min-tro-2-afsnit-verden-er-en-stor-sjael-kan-dinosaurerne-genopsta
 ---
