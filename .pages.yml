@@ -12,14 +12,18 @@ content:
     path: content/videos
     filename: '{order}-{slug}.md'
     view:
-      fields: [title, year, duration]
+      fields: [title, title_da, year, duration]
       sort: [order, year, title]
       default:
         sort: order
         order: asc
     fields:
       - name: title
-        label: Title
+        label: Title (English)
+        type: string
+        required: true
+      - name: title_da
+        label: Title (Danish)
         type: string
         required: true
       - name: year
@@ -41,7 +45,11 @@ content:
         type: image
         required: true
       - name: faith
-        label: Faith/Category
+        label: Faith/Category (English)
+        type: string
+        required: false
+      - name: faith_da
+        label: Faith/Category (Danish)
         type: string
         required: false
       - name: faith_icon
@@ -53,12 +61,12 @@ content:
         type: number
         required: true
         description: Display order (1 = first)
-      - name: awards
-        label: Awards
-        type: string
-        required: false
       - name: description
-        label: Description
+        label: Description (English)
+        type: text
+        required: true
+      - name: description_da
+        label: Description (Danish)
         type: text
         required: true
       - name: filmstriben
@@ -67,43 +75,6 @@ content:
         list: true
         required: false
 
-  # Filmography
-  - name: filmography
-    label: Documentary Films
-    type: file
-    path: content/filmography.md
-    fields:
-      - name: films
-        label: Films
-        type: object
-        list: true
-        fields:
-          - name: title
-            label: Title
-            type: string
-          - name: year
-            label: Year
-            type: number
-          - name: duration
-            label: Duration
-            type: string
-          - name: vimeoId
-            label: Vimeo ID
-            type: string
-            description: Just the ID number from the Vimeo URL (e.g., 1147617209)
-          - name: description
-            label: Description
-            type: rich-text
-          - name: awards
-            label: Awards
-            type: string
-            required: false
-          - name: filmstriben
-            label: Filmstriben Links
-            type: string
-            list: true
-            required: false
-
   # Portrait
   - name: portrait
     label: Portrait
@@ -111,21 +82,43 @@ content:
     path: content/portrait.md
     fields:
       - name: title
-        label: Title
+        label: Title (English)
+        type: string
+      - name: title_da
+        label: Title (Danish)
         type: string
       - name: intro
-        label: Introduction
+        label: Introduction (English)
         type: rich-text
+        required: false
+      - name: intro_da
+        label: Introduction (Danish)
+        type: rich-text
+        required: false
       - name: featured_portrait
         label: Featured Portrait
         type: object
         fields:
           - name: title
-            label: Title
+            label: Title (English)
             type: string
+            required: false
+          - name: title_da
+            label: Title (Danish)
+            type: string
+            required: false
+          - name: subtitle
+            label: Subtitle (English)
+            type: string
+            required: false
+          - name: subtitle_da
+            label: Subtitle (Danish)
+            type: string
+            required: false
           - name: year
-            label: Year
-            type: number
+            label: Year/Credit
+            type: string
+            description: e.g., "Eva smith 2025"
           - name: duration
             label: Duration
             type: string
@@ -133,8 +126,12 @@ content:
             label: Vimeo ID
             type: string
           - name: description
-            label: Description
-            type: string
+            label: Description (English)
+            type: text
+            required: false
+          - name: description_da
+            label: Description (Danish)
+            type: text
             required: false
 
   # About
@@ -144,19 +141,33 @@ content:
     path: content/about.md
     fields:
       - name: title
-        label: Title
+        label: Title (English)
+        type: string
+      - name: title_da
+        label: Title (Danish)
         type: string
       - name: name
         label: Name
         type: string
+        required: false
       - name: profession
-        label: Profession
+        label: Profession (English)
+        type: string
+      - name: profession_da
+        label: Profession (Danish)
         type: string
       - name: bio
-        label: Biography
+        label: Biography (English)
+        type: rich-text
+      - name: bio_da
+        label: Biography (Danish)
         type: rich-text
       - name: acknowledgements
-        label: Acknowledgements
+        label: Acknowledgements (English)
+        type: string
+        list: true
+      - name: acknowledgements_da
+        label: Acknowledgements (Danish)
         type: string
         list: true
       - name: links
