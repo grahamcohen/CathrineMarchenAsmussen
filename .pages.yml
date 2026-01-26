@@ -1,5 +1,9 @@
 # Pages CMS Configuration for Cathrine Marchen Asmussen Website
 
+settings:
+  content:
+    merge: true
+
 media:
   input: assets/images
   output: /assets/images
@@ -69,11 +73,6 @@ content:
         label: Description (Danish)
         type: text
         required: true
-      - name: filmstriben
-        label: Filmstriben Links
-        type: string
-        list: true
-        required: false
 
   # Portrait
   - name: portrait
