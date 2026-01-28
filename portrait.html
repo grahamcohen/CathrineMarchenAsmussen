@@ -33,25 +33,12 @@
         <section class="film-detail-section">
             <div class="container container-film">
                 <div class="film-detail-content">
-                    <div class="film-header">
-                        <!--<h2 class="film-detail-title">PORTRAIT EVA SMITH</h2>-->
-                        <!--<p class="portrait-subtitle">My mother</p>-->
+                    <div id="portrait-videos-container">
+                        <!-- Multiple portrait videos will be loaded here -->
                     </div>
 
-                    <div class="film-player">
-                        <div class="video-wrapper video-wrapper-large">
-                            <iframe src="https://player.vimeo.com/video/1147618403" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-                        </div>
-                    </div>
-
-                    <div class="film-info-section">
-                        <p class="film-meta">Eva smith · 2025 · 10 min, 18 sec</p>
-                    </div>
-
-                    <div class="film-description-full">
-                        <p>What is the essence of a human being?</p>
-                        <p>Back in the old days, you would go to a painter.</p>
-                        <p>I immortalize people through portrait films.</p>
+                    <div class="film-description-full" id="portrait-description">
+                        <!-- Description from first row will be loaded here -->
                     </div>
                 </div>
             </div>
@@ -68,6 +55,7 @@
         </div>
     </footer>
 
+    <script src="assets/js/sheets-cache.js"></script>
     <script src="assets/js/language.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/portrait-loader.js"></script>
